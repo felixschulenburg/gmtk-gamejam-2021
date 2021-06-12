@@ -8,6 +8,8 @@ script = ExtResource( 2 )
 
 [node name="Pendulum" parent="." instance=ExtResource( 1 )]
 position = Vector2( 502, 182 )
+chain_length = 10
+joint_length = 20
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 5.0

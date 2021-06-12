@@ -2,6 +2,8 @@ extends Node2D
 
 var Enemy = preload("Enemy.tscn")
 
+onready var pendulum = $Pendulum
+
 onready var spawn_timer = $SpawnTimer
 
 func _ready():
@@ -15,4 +17,5 @@ func spawn_enemy():
 	var e = Enemy.instance()
 	add_child(e)
 	e.global_position = position
+	e.connect("enemy_hit", pendulum, "on_enemy_hit")
 	spawn_timer.start()
