@@ -16,7 +16,9 @@ var wall_segments = []
 var start_prefab = preload("Prefabs/Start.tscn")
 var arena_prefabs = [
 	preload("Prefabs/001.tscn"),
-	preload("Prefabs/002.tscn")
+	preload("Prefabs/002.tscn"),
+	preload("Prefabs/003.tscn"),
+	preload("Prefabs/004.tscn")
 ]
 
 var last_chunk

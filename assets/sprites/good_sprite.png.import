@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider.png-b39d6117054d9ec3c796d37fbb0a7fdc.stex"
+path="res://.import/good_sprite.png-2b5fa175d4df0bd37d5648475abe74bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spider.png"
-dest_files=[ "res://.import/spider.png-b39d6117054d9ec3c796d37fbb0a7fdc.stex" ]
+source_file="res://assets/sprites/good_sprite.png"
+dest_files=[ "res://.import/good_sprite.png-2b5fa175d4df0bd37d5648475abe74bc.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
