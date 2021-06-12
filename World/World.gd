@@ -1,7 +1,7 @@
 extends Node2D
 
-var Enemy = preload("Enemy.tscn")
-var Pickup = preload("Pickup.tscn")
+var Enemy = preload("res://Units/Enemy.tscn")
+var Pickup = preload("res://Units/Pickup.tscn")
 
 onready var player = $Player
 

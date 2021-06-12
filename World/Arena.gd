@@ -13,10 +13,10 @@ export var platform_spawn_disable_margin = 40
 var last_chunk_index = -1
 var wall_segments = []
 
-var start_prefab = preload("WorldPrefabs/Start.tscn")
+var start_prefab = preload("Prefabs/Start.tscn")
 var arena_prefabs = [
-	preload("WorldPrefabs/001.tscn"),
-	preload("WorldPrefabs/002.tscn")
+	preload("Prefabs/001.tscn"),
+	preload("Prefabs/002.tscn")
 ]
 
 var last_chunk
