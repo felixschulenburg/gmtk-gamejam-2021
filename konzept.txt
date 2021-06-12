@@ -1,0 +1,12 @@
+- Zwei Endpunkte (z.B. Spinnen)
+- Eine von beiden ist Anchor, die andere schwingt per Maus-Drag'N'Drop
+- Rechtsklick vertauscht die Rollen der beiden Endpunkte
+- Der Spieler muss versuchen, eine Arena nach oben zu klettern
+- Wenn der Spieler zu langsam ist, wird er eingeholt und verliert
+- In der Arena sind Hindernisse
+- In der Arena sind "Gegner", die die Länge der Kette verkürzen können -> Spieler wird langsamer
+- Kettenlänge ist gleichzeitig Leben vom Spieler - Spieler stirbt wenn Kette kaputt
+- In der Arena sind Pickups die die Länge der Kette vergrößern kann
+- Der Spieler spielt auf Highscore
+- Kette hat maximale Länge
+- Highscore ist gegeben durch Höhe
