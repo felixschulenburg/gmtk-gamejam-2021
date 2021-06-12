@@ -5,10 +5,12 @@ var WallSegment = preload("WallSegment.tscn")
 export(NodePath) var player_node_path
 var player
 
-var arena_width = 500
-var arena_chunk_height = 500
-var last_chunk_index = -1
+export var arena_width = 500
+export var arena_chunk_height = 500
+export var platforms_per_chunk = 3
+export var platform_spawn_disable_margin = 40
 
+var last_chunk_index = -1
 var wall_segments = []
 
 # Called when the node enters the scene tree for the first time.
@@ -41,7 +43,8 @@ func createNewChunk(chunk_index):
 	position.x *= -1
 	spawnWallSegment(position, extent)
 	
-	spawnRandomWallGeometry(chunk_index)
+	for i in platforms_per_chunk:
+		spawnRandomWallGeometry(chunk_index)
 	
 
 func spawnWallSegment(position, extent, rotation_degrees=0, discard_if_collision=false, spawn_area_extra_extent=20):
@@ -65,10 +68,10 @@ func spawnRandomWallGeometry(chunk_index):
 	while not did_spawn:
 		var posx = rand_range(-arena_width, arena_width)
 		var posy = rand_range(-(chunk_index-0.5) * arena_chunk_height, -(chunk_index+0.5) * arena_chunk_height)
-		var extx = rand_range(0, arena_width * 0.7)
+		var extx = rand_range(arena_width * 0.3, arena_width * 0.7)
 		var exty = 5
-		var rotation_degrees = rand_range(-20, 20)
-		did_spawn = spawnWallSegment(Vector2(posx, posy), Vector2(extx, exty), rotation_degrees, true, 40)
+		var rotation_degrees = rand_range(-30, 30)
+		did_spawn = spawnWallSegment(Vector2(posx, posy), Vector2(extx, exty), rotation_degrees, true, platform_spawn_disable_margin)
 	
 func wallSegmentCollides(wall_segment):
 	for seg in wall_segments:
