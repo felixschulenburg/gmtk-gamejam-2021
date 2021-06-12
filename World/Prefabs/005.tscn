@@ -14,7 +14,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, 1000 )
 
 [node name="Exit" type="Node2D" parent="."]
-position = Vector2( 970, -2030 )
+position = Vector2( 930, -2030 )
 
 [node name="wall_20x200_" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1000, 800 )
