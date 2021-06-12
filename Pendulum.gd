@@ -3,6 +3,7 @@ class_name Pendulum
 
 onready var anchor = $Anchor
 onready var anchor_joint = $Anchor/PinJoint2D
+onready var camera = $Camera2D
 
 var ChainLink = preload("ChainLink.tscn")
 var ChainJoint = preload("ChainJoint.tscn")
@@ -100,6 +101,7 @@ func shoot(dir):
 		
 		var p = Projectile.instance()
 		add_child(p)
+		
 		if chain_direction == -1:
 			p.global_position = links[0].global_position + dir.normalized() * projectile_offset
 		else:
@@ -124,7 +126,12 @@ func change_direction():
 		anchor_joint.set_node_b(links[0].get_path())
 #		links[0].fixed = true
 #		links[-1].fixed = false
+	
+	camera.global_position = anchor.global_position
 
 func on_enemy_hit():
-	add_link(Vector2(0, joint_length))
+	for i in range(2):
+		add_link(Vector2(0, joint_length))
+
+func on_pickup_touched():
 	add_link(Vector2(0, joint_length))
