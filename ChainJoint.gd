@@ -1,7 +1,7 @@
 extends Node2D
 class_name ChainJoint
 
-onready var joint = $DampedSpringJoint2D
+onready var joint = $Joint2D
 onready var line = $Line2D
 
 var node_a
@@ -9,11 +9,12 @@ var node_b
 var connected = false
 
 func _ready():
-	joint.length = 1
-	joint.rest_length = 0
-	joint.stiffness = 64.0
-	joint.damping = 0.0
-	joint.bias = 10.0
+	joint.softness = 0.5
+#	joint.length = 1
+#	joint.rest_length = 0
+#	joint.stiffness = 64.0
+#	joint.damping = 0.0
+#	joint.bias = 10.0
 	line.add_point(Vector2.ZERO)
 	line.add_point(Vector2.ZERO)
 	
