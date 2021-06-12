@@ -1,8 +1,8 @@
 extends Node2D
 class_name Player
 
-var ChainNode = preload("ChainNode.tscn")
-var ChainJoint = preload("ChainJoint.tscn")
+var ChainNodeScene = preload("ChainNode.tscn")
+var ChainJointScene = preload("ChainJoint.tscn")
 
 onready var joy = $Joy
 onready var ned = $Ned
@@ -12,6 +12,8 @@ onready var joy_anchor = $Joy/Anchor
 onready var ned_anchor = $Ned/Anchor
 onready var camera = $Camera2D
 onready var launch_line = $LaunchLine
+onready var invulnerability_timer = $InvulnerabilityTimer
+onready var segments_label = $CanvasLayer/SegmentsPanel/SegementsLabel
 
 var joy_fixed = true
 var ned_fixed = false
@@ -44,7 +46,7 @@ func _ready():
 	ned_joint.set_node_b(ned.get_path())
 	
 	for i in range(num_nodes()):
-		var n = ChainNode.instance()
+		var n = ChainNodeScene.instance()
 		add_child(n)
 		n.position = Vector2(0, (i + 1) * len_segments)
 		nodes.push_back(n)
@@ -52,13 +54,13 @@ func _ready():
 	for i in range(num_segments):
 		var n1 = joy_anchor.body if i == 0 else nodes[i - 1].body
 		var n2 = ned_anchor.body if i == num_segments - 1 else nodes[i].body
-		var s = ChainJoint.instance()
+		var s = ChainJointScene.instance()
 		n1.add_child(s)
 		s.set_nodes(n1, n2)
 		segments.push_back(s)
 
 func _process(delta):
-	pass
+	segments_label.text = "Segments: " + str(segments.size())
 
 func _physics_process(delta):
 	camera.global_position = get_inactive().global_position
@@ -95,27 +97,28 @@ func _input(event):
 
 func add_segment():
 	if joy_fixed:
-		var n = ChainNode.instance()
+		var n = ChainNodeScene.instance()
 		add_child(n)
 		n.global_position = ned.global_position
 		nodes.push_back(n)
 		
+		ned.global_position = ned.global_position + (nodes[-1].global_position - nodes[-2].global_position).normalized() * len_segments
 		segments[-1].set_nodes(nodes[-2].body, nodes[-1].body)
 		
-		var s = ChainJoint.instance()
+		var s = ChainJointScene.instance()
 		n.body.add_child(s)
 		s.set_nodes(nodes[-1].body, ned_anchor.body)
 		segments.push_back(s)
 	
 	elif ned_fixed:
-		var n = ChainNode.instance()
+		var n = ChainNodeScene.instance()
 		add_child(n)
 		n.global_position = joy.global_position
 		nodes.push_front(n)
 		
 		segments[0].set_nodes(nodes[0].body, nodes[1].body)
 		
-		var s = ChainJoint.instance()
+		var s = ChainJointScene.instance()
 		n.body.add_child(s)
 		s.set_nodes(joy_anchor.body, nodes[0].body)
 		segments.push_front(s)
@@ -170,8 +173,12 @@ func get_inactive():
 func num_nodes():
 	return num_segments - 1
 
-func on_pickup_touched():
-	add_segment()
+func on_player_hit(damage):
+	if invulnerability_timer.is_stopped():
+		invulnerability_timer.start()
+		for i in range(damage):
+			remove_segment();
 
-func on_enemy_hit():
-	pass
+func on_player_pickup(segments):
+	for i in range(segments):
+		add_segment();
