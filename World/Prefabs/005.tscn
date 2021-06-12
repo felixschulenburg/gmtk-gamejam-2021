@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
+[ext_resource path="res://World/SceneGeometry/wall_20x1000.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/SceneGeometry/floor_500x20.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/SceneGeometry/floor_200x20.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/SceneGeometry/floor_100x20.tscn" type="PackedScene" id=6]
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="Entry" type="Node2D" parent="."]
+position = Vector2( 0, 1000 )
+
+[node name="Exit" type="Node2D" parent="."]
+position = Vector2( 970, -2030 )
+
+[node name="wall_20x200_" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1000, 800 )
+
+[node name="floor_500x20_3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1450, -1400 )
+
+[node name="floor_500x20_5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 450, -1840 )
+
+[node name="wall_20x200_10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1930, -1600 )
+
+[node name="wall_20x200_2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1000, 800 )
+
+[node name="wall_20x200_4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1000, 800 )
+
+[node name="wall_20x200_5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1000, 800 )
+
+[node name="wall_20x200_6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -70, -1830 )
+
+[node name="wall_20x200_7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1930, -1830 )
+
+[node name="wall_20x200_8" parent="." instance=ExtResource( 4 )]
+position = Vector2( -70, -1830 )
+
+[node name="wall_20x200_9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1930, -1830 )
+
+[node name="floor_500x20_" parent="." instance=ExtResource( 3 )]
+position = Vector2( -540, 480 )
+rotation = -0.261799
+
+[node name="floor_500x20_2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 437.702, 351.414 )
+
+[node name="floor_500x20_4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 550, -290 )
+
+[node name="wall_20x1000_" parent="." instance=ExtResource( 2 )]
+position = Vector2( -70, -630 )
+
+[node name="wall_20x200_3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 927.622, 171.412 )
+
+[node name="wall_20x1000_2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1160, -400 )
+
+[node name="floor_100x20_" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1080, 580 )
+
+[node name="floor_100x20_2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 890, -500 )
+
+[node name="floor_100x20_3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 360, -750 )
+
+[node name="floor_100x20_4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 510, -430 )
+
+[node name="floor_100x20_5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 900, -1050 )
+
+[node name="floor_100x20_11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1810, -1650 )
+
+[node name="floor_100x20_6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 580, -890 )
+
+[node name="floor_100x20_9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 430, -1090 )
+
+[node name="floor_100x20_10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1450, -1760 )
+
+[node name="floor_100x20_7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 140, -880 )
+
+[node name="floor_100x20_8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 940, -760 )
+
+[node name="floor_200x20_" parent="floor_100x20_8" instance=ExtResource( 5 )]
+position = Vector2( -660, 180 )
+
+[node name="floor_200x20_2" parent="floor_100x20_8" instance=ExtResource( 5 )]
+position = Vector2( -660, 180 )
+
+[node name="floor_200x20_4" parent="floor_100x20_8" instance=ExtResource( 5 )]
+position = Vector2( 210, -1040 )
+
+[node name="floor_200x20_3" parent="floor_100x20_8" instance=ExtResource( 5 )]
+position = Vector2( -660, -480 )
