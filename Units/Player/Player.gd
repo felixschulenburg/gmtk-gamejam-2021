@@ -27,6 +27,8 @@ var segments = []
 
 var dragging = false
 
+signal player_died
+
 func _ready():
 	launch_line.add_point(Vector2.ZERO)
 	launch_line.add_point(Vector2.ZERO)
@@ -142,6 +144,8 @@ func remove_segment():
 	#		s.call_deferred("queue_free")
 			n.call_deferred(("queue_free"))
 #			update_segment_length(0)
+	else:
+		emit_signal("player_died")
 
 #func update_segment_length(i):
 #	# hack
