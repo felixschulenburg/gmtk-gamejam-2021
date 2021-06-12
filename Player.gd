@@ -16,8 +16,8 @@ onready var launch_line = $LaunchLine
 var joy_fixed = true
 var ned_fixed = false
 
-export var num_segments = 20
-export var len_segments = 5
+export var num_segments = 40
+export var len_segments = 10
 export var launch_speed = 250
 
 var nodes = []
@@ -73,7 +73,7 @@ func _input(event):
 	if Input.is_action_just_pressed("scroll_down"):
 		remove_segment()
 		
-	if event.is_action_pressed("click_right"):
+	if Input.is_action_pressed("action_space") or event.is_action_pressed("click_right"):
 		toggle_fixed()
 	
 	if event.is_action_pressed("click_left") and not dragging:
