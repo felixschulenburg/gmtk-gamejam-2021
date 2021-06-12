@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://Enemy.gd"
-}, {
 "base": "RigidBody2D",
 "class": "Link",
 "language": "GDScript",
@@ -30,7 +25,6 @@ _global_script_classes=[ {
 "path": "res://Projectile.gd"
 } ]
 _global_script_class_icons={
-"Enemy": "",
 "Link": "",
 "Pendulum": "",
 "Projectile": ""
