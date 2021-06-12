@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Pendulum.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
+[ext_resource path="res://Arena.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -13,5 +14,8 @@ joint_length = 20
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Arena" parent="." instance=ExtResource( 3 )]
+player_node_path = NodePath("../Pendulum")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
