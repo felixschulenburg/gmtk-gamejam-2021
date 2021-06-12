@@ -15,11 +15,11 @@ var wall_segments = []
 
 var start_prefab = preload("Prefabs/Start.tscn")
 var arena_prefabs = [
-	preload("Prefabs/001.tscn"),
-	preload("Prefabs/002.tscn"),
-	preload("Prefabs/003.tscn"),
-	preload("Prefabs/004.tscn"),
-	preload("Prefabs/005.tscn")
+	#preload("Prefabs/001.tscn"),
+	#preload("Prefabs/002.tscn"),
+	preload("Prefabs/003.tscn")
+	#preload("Prefabs/004.tscn"),
+	#preload("Prefabs/005.tscn")
 ]
 
 var last_chunk
@@ -33,7 +33,6 @@ func _init():
 	var start = start_prefab.instance()
 	last_chunk = start
 	add_child(start)
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,7 +41,7 @@ func _process(delta):
 	var player_chunk_index = int(-player.position.y) / arena_chunk_height
 	
 	# Create new chunks if player is close enough to current last chunk
-	while player_chunk_index > last_chunk_index - 3:
+	while player_chunk_index > last_chunk_index - 30:
 		last_chunk_index += 1
 		createNewChunk(last_chunk_index)
 		

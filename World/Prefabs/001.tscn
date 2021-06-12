@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x1000.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/SceneGeometry/floor_500x20.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/SceneGeometry/floor_600x20.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Units/Pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Units/SpawnMaybe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Units/Spike.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/SceneGeometry/floor_200x20.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Units/SpikeRow4.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="StaticBody2D"]
 collision_layer = 3
@@ -34,10 +39,94 @@ position = Vector2( 0, -720 )
 [node name="floor_1000x21" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 450 )
 rotation = 0.261799
-scale = Vector2( 1, 1 )
 
 [node name="wall_20x1000" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1000, 0 )
 
 [node name="wall_20x1001" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1000, 0 )
+
+[node name="SpawnMaybe6" parent="." instance=ExtResource( 6 )]
+spawnProbability = 30
+
+[node name="SpikeRow4_" parent="SpawnMaybe6" instance=ExtResource( 9 )]
+position = Vector2( 0, 760 )
+rotation = 3.14159
+
+[node name="floor_200x20_" parent="SpawnMaybe6" instance=ExtResource( 8 )]
+position = Vector2( 0, 740 )
+
+[node name="Spikes" parent="SpawnMaybe6" instance=ExtResource( 7 )]
+position = Vector2( -100, 690 )
+
+[node name="Spikes2" parent="SpawnMaybe6" instance=ExtResource( 7 )]
+position = Vector2( 100, 690 )
+
+[node name="SpawnMaybe3" parent="." instance=ExtResource( 6 )]
+spawnProbability = 75
+
+[node name="SpikeRow4_" parent="SpawnMaybe3" instance=ExtResource( 9 )]
+position = Vector2( -370, -740 )
+
+[node name="SpawnMaybe4" parent="." instance=ExtResource( 6 )]
+spawnProbability = 75
+
+[node name="SpikeRow4_" parent="SpawnMaybe4" instance=ExtResource( 9 )]
+position = Vector2( 0, -740 )
+
+[node name="SpikeRow4_2" parent="SpawnMaybe4" instance=ExtResource( 9 )]
+position = Vector2( 370, -740 )
+
+[node name="SpawnMaybe5" parent="." instance=ExtResource( 6 )]
+spawnProbability = 25
+
+[node name="SpikeRow4_" parent="SpawnMaybe5" instance=ExtResource( 9 )]
+position = Vector2( 0, -740 )
+
+[node name="SpikeRow4_2" parent="SpawnMaybe5" instance=ExtResource( 9 )]
+position = Vector2( 980, -180 )
+rotation = -1.57079
+
+[node name="SpikeRow4_3" parent="SpawnMaybe5" instance=ExtResource( 9 )]
+position = Vector2( -980, -180 )
+rotation = 1.5708
+
+[node name="SpawnMaybe2" parent="." instance=ExtResource( 6 )]
+spawnProbability = 30
+
+[node name="Spikes5" parent="SpawnMaybe2" instance=ExtResource( 7 )]
+position = Vector2( -160, 410 )
+rotation = 2.87979
+scale = Vector2( 1, 1 )
+
+[node name="Spikes6" parent="SpawnMaybe2" instance=ExtResource( 7 )]
+position = Vector2( 160, 410 )
+rotation = -2.87979
+
+[node name="SpawnMaybe" parent="." instance=ExtResource( 6 )]
+spawnProbability = 50
+
+[node name="Pickup" parent="SpawnMaybe" instance=ExtResource( 5 )]
+position = Vector2( 0, -60 )
+
+[node name="Spikes" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( -200, -80 )
+rotation = 0.261799
+
+[node name="Spikes2" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( -380, -130 )
+rotation = 0.261799
+
+[node name="Spikes4" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( 380, -130 )
+rotation = -0.261799
+
+[node name="Spikes3" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( 200, -80 )
+rotation = -0.261799
+
+[node name="floor_200x20_" parent="SpawnMaybe" instance=ExtResource( 8 )]
+position = Vector2( -200, -430 )
+
+[node name="floor_200x20_2" parent="SpawnMaybe" instance=ExtResource( 8 )]
+position = Vector2( 200, -430 )
