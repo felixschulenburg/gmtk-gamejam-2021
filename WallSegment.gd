@@ -9,7 +9,7 @@ onready var collision_shape = $CollisionShape2D.shape
 onready var spawn_area_collision_shape = $SpawnDisableArea/SpawnDisableCollisionArea.shape
 onready var spawn_disable_area = $SpawnDisableArea
 
-var spawn_area_extra_extent = 20
+var spawn_area_extra_extent = 0
 
 # Tracks if this wall segments spawn area currently collides with another spawn area
 var has_spawn_area_collision = false

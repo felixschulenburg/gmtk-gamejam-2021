@@ -13,13 +13,23 @@ export var platform_spawn_disable_margin = 40
 var last_chunk_index = -1
 var wall_segments = []
 
+var start_prefab = preload("WorldPrefabs/Start.tscn")
+var arena_prefabs = [
+	preload("WorldPrefabs/001.tscn"),
+	preload("WorldPrefabs/002.tscn")
+]
+
+var last_chunk
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	player = get_node(player_node_path).camera
 	
 func _init():
-	# Draw initial arena tiles
+	var start = start_prefab.instance()
+	last_chunk = start
+	add_child(start)
 	pass
 
 
@@ -34,7 +44,18 @@ func _process(delta):
 		createNewChunk(last_chunk_index)
 		
 
-func createNewChunk(chunk_index):
+func createNewChunk(chunk_index):	
+	# Get random world prefab
+	var rnd_id = randi() % arena_prefabs.size()
+	var new_chunk = arena_prefabs[rnd_id].instance()
+	add_child(new_chunk)
+	
+	# Move chunk to correct position
+	new_chunk.move_entry_to(last_chunk.exit)
+	last_chunk = new_chunk
+	
+	
+	return
 	var position = Vector2(-arena_width, -chunk_index * arena_chunk_height)
 	var extent = Vector2(20, arena_chunk_height / 2)
 	
