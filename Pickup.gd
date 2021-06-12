@@ -1,7 +1,7 @@
 extends Area2D
 
 
-signal pendulum_touched
+signal player_touched
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,5 +15,6 @@ func _ready():
 
 
 func _on_Pickup_body_entered(body):
-	if body is Pendulum:
-		emit_signal("pendulum_touched")
+	if body is Player or body is ChainNode or body is ChainJoint:
+		emit_signal("player_touched")
+		call_deferred("queue_free")
