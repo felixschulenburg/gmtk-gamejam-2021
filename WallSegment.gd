@@ -5,11 +5,20 @@ extends StaticBody2D
 # var a = 2
 # var b = "text"
 
-export(Vector2) var extents setget set_extents, get_extents
 onready var collision_shape = $CollisionShape2D.shape
+onready var spawn_area_collision_shape = $SpawnDisableArea/SpawnDisableCollisionArea.shape
+onready var spawn_disable_area = $SpawnDisableArea
 
-func set_extents(value):
+var spawn_area_extra_extent = 20
+
+# Tracks if this wall segments spawn area currently collides with another spawn area
+var has_spawn_area_collision = false
+
+
+func set_extents(value, spawn_disable_extra_extent=spawn_area_extra_extent):
+	spawn_area_extra_extent = spawn_disable_extra_extent
 	collision_shape.extents = value
+	spawn_area_collision_shape.extents = value + Vector2(spawn_area_extra_extent, spawn_area_extra_extent)
 	
 func get_extents():
 	return collision_shape.extents
@@ -22,3 +31,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_SpawnDisableArea_body_entered(body):
+	has_spawn_area_collision = true
+
+func _on_SpawnDisableArea_body_exited(body):
+	has_spawn_area_collision = false
