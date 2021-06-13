@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://Units/Player/ChainNodeBody.gd"
 }, {
 "base": "Node2D",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://Units/Coin.gd"
+}, {
+"base": "Node2D",
 "class": "Pickup",
 "language": "GDScript",
 "path": "res://Units/Pickup.gd"
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "ChainJoint": "",
 "ChainNode": "",
 "ChainNodeBody": "",
+"Coin": "",
 "Pickup": "",
 "Player": "",
 "PlayerJoy": "",

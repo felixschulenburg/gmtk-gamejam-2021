@@ -1,7 +1,7 @@
 extends Node2D
 class_name Spike
 
-export var damagePerHit = 5
+export var damagePerHit = 1
 
 signal player_joy_hit_by_spike(damage)
 signal player_ned_hit_by_spike(damage)
