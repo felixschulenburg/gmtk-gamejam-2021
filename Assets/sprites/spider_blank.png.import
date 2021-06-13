@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider_blank.png-a427d2bc07e5e8105d6698273e12e5f2.stex"
+path="res://.import/spider_blank.png-3aa3754c64942fe8845e968089e64b5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spider_blank.png"
-dest_files=[ "res://.import/spider_blank.png-a427d2bc07e5e8105d6698273e12e5f2.stex" ]
+source_file="res://Assets/sprites/spider_blank.png"
+dest_files=[ "res://.import/spider_blank.png-3aa3754c64942fe8845e968089e64b5c.stex" ]
 
 [params]
 

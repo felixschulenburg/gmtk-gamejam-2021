@@ -1,18 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Assets/styles/TouchableZoneGradient.tres" type="Gradient" id=1]
 [ext_resource path="res://World/TouchableZone.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
 extents = Vector2( 20, 20 )
 
-[sub_resource type="Gradient" id=8]
-offsets = PoolRealArray( 0.518519 )
-colors = PoolColorArray( 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
-width = 40
+[sub_resource type="GradientTexture" id=3]
+gradient = ExtResource( 1 )
+width = 20
 
 [node name="TouchableZone_20x20_" type="Area2D"]
 z_index = -1
@@ -24,5 +21,5 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1, 40 )
-texture = SubResource( 9 )
+scale = Vector2( 2, 40 )
+texture = SubResource( 3 )

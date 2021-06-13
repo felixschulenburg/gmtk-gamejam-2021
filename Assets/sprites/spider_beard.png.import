@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider_beard.png-dd8701307b0efe8dbda47c0c4f80f107.stex"
+path="res://.import/spider_beard.png-30dd1fd56792007e2dbc03df0dddfbc1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spider_beard.png"
-dest_files=[ "res://.import/spider_beard.png-dd8701307b0efe8dbda47c0c4f80f107.stex" ]
+source_file="res://Assets/sprites/spider_beard.png"
+dest_files=[ "res://.import/spider_beard.png-30dd1fd56792007e2dbc03df0dddfbc1.stex" ]
 
 [params]
 

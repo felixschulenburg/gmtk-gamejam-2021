@@ -131,7 +131,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.423529, 0.592157, 0.984314, 1 )
+environment/default_clear_color=Color( 0.454902, 0.521569, 0.670588, 1 )
 quality/filters/msaa=4
 quality/filters/use_fxaa=true
 quality/filters/use_debanding=true

@@ -1,21 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Assets/styles/TouchableZoneGradient.tres" type="Gradient" id=1]
 [ext_resource path="res://World/TouchableZone.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
 extents = Vector2( 100, 100 )
 
-[sub_resource type="OpenSimplexNoise" id=2]
-period = 11.2
-persistence = 0.576
-lacunarity = 2.34
-
-[sub_resource type="NoiseTexture" id=3]
-resource_local_to_scene = true
-width = 200
-height = 200
-noise = SubResource( 2 )
+[sub_resource type="GradientTexture" id=3]
+gradient = ExtResource( 1 )
+width = 100
 
 [node name="TouchableZone_100x100_" type="Area2D"]
 z_index = -1
@@ -27,4 +21,5 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 200 )
 texture = SubResource( 3 )
