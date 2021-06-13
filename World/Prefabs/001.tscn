@@ -22,7 +22,7 @@ position = Vector2( 0, 1000 )
 position = Vector2( 0, -1000 )
 
 [node name="floor_1000x20" parent="." instance=ExtResource( 3 )]
-position = Vector2( -512, 450 )
+position = Vector2( -530, 460 )
 rotation = -0.261799
 
 [node name="floor_1000x25" parent="." instance=ExtResource( 4 )]
@@ -37,7 +37,7 @@ rotation = -0.261799
 position = Vector2( 0, -720 )
 
 [node name="floor_1000x21" parent="." instance=ExtResource( 3 )]
-position = Vector2( 512, 450 )
+position = Vector2( 530, 460 )
 rotation = 0.261799
 
 [node name="wall_20x1000" parent="." instance=ExtResource( 2 )]
@@ -47,7 +47,7 @@ position = Vector2( -1000, 0 )
 position = Vector2( 1000, 0 )
 
 [node name="SpawnMaybe6" parent="." instance=ExtResource( 6 )]
-spawnProbability = 30
+spawnProbability = 75
 
 [node name="SpikeRow4_" parent="SpawnMaybe6" instance=ExtResource( 9 )]
 position = Vector2( 0, 760 )
@@ -78,7 +78,7 @@ position = Vector2( 0, -740 )
 position = Vector2( 370, -740 )
 
 [node name="SpawnMaybe5" parent="." instance=ExtResource( 6 )]
-spawnProbability = 25
+spawnProbability = 75
 
 [node name="SpikeRow4_" parent="SpawnMaybe5" instance=ExtResource( 9 )]
 position = Vector2( 0, -740 )
@@ -92,12 +92,11 @@ position = Vector2( -980, -180 )
 rotation = 1.5708
 
 [node name="SpawnMaybe2" parent="." instance=ExtResource( 6 )]
-spawnProbability = 30
+spawnProbability = 40
 
 [node name="Spikes5" parent="SpawnMaybe2" instance=ExtResource( 7 )]
 position = Vector2( -160, 410 )
 rotation = 2.87979
-scale = Vector2( 1, 1 )
 
 [node name="Spikes6" parent="SpawnMaybe2" instance=ExtResource( 7 )]
 position = Vector2( 160, 410 )
@@ -116,6 +115,14 @@ rotation = 0.261799
 [node name="Spikes2" parent="SpawnMaybe" instance=ExtResource( 7 )]
 position = Vector2( -380, -130 )
 rotation = 0.261799
+
+[node name="Spikes5" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( -360, -380 )
+rotation = 3.14159
+
+[node name="Spikes6" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( 360, -380 )
+rotation = 3.14159
 
 [node name="Spikes4" parent="SpawnMaybe" instance=ExtResource( 7 )]
 position = Vector2( 380, -130 )

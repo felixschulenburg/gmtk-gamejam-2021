@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
-[ext_resource path="res://World/SceneGeometry/wall_20x1000.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/SceneGeometry/floor_1000x20.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Units/SpikeRow4.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="StaticBody2D"]
 collision_layer = 3
@@ -10,16 +11,39 @@ collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="Entry" type="Node2D" parent="."]
-position = Vector2( 0, 500 )
 
 [node name="Exit" type="Node2D" parent="."]
-position = Vector2( 0, -1000 )
+position = Vector2( 0, -512 )
 
 [node name="floor_1000x20" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 980 )
+position = Vector2( 0, 512 )
 
-[node name="wall_20x1000" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1000, 0 )
+[node name="wall_20x200_" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1000, 332 )
 
-[node name="wall_20x1001" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1000, 0 )
+[node name="wall_20x200_2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1000, -68 )
+
+[node name="wall_20x200_3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1000, -312 )
+
+[node name="wall_20x200_4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, 332 )
+
+[node name="SpikeRow4_" parent="wall_20x200_4" instance=ExtResource( 4 )]
+position = Vector2( -1808, 160 )
+
+[node name="SpikeRow4_2" parent="wall_20x200_4" instance=ExtResource( 4 )]
+position = Vector2( -1548, 160 )
+
+[node name="SpikeRow4_3" parent="wall_20x200_4" instance=ExtResource( 4 )]
+position = Vector2( -412, 160 )
+
+[node name="SpikeRow4_4" parent="wall_20x200_4" instance=ExtResource( 4 )]
+position = Vector2( -152, 160 )
+
+[node name="wall_20x200_5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, -68 )
+
+[node name="wall_20x200_6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, -312 )

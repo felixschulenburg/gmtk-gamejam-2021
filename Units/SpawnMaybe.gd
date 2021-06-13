@@ -4,7 +4,9 @@ export var spawnProbability = 100
 var player
 
 func _ready():
-	if randi()% 100 > spawnProbability:
+	var rndnum = randi() % 100
+	#print(rndnum)
+	if rndnum > spawnProbability:
 		call_deferred("queue_free")
 		
 	player = get_tree().get_root().get_node("World/Player")
