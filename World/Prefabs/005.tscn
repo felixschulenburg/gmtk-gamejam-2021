@@ -104,23 +104,23 @@ spawnProbability = 60
 position = Vector2( 360, -880 )
 
 [node name="SpawnMaybe5" parent="." instance=ExtResource( 8 )]
-spawnProbability = 50
+spawnProbability = 65
 
 [node name="floor_100x20_12" parent="SpawnMaybe5" instance=ExtResource( 6 )]
 position = Vector2( 1070, -290 )
 
 [node name="wall_20x200_11" parent="SpawnMaybe5" instance=ExtResource( 4 )]
-position = Vector2( 160, 10 )
+position = Vector2( 132, 12 )
 
 [node name="Spikes" parent="SpawnMaybe5" instance=ExtResource( 7 )]
 position = Vector2( 750, -60 )
 
 [node name="Spikes3" parent="SpawnMaybe5" instance=ExtResource( 7 )]
-position = Vector2( 590, -240 )
+position = Vector2( 592, 40 )
 rotation = 3.14159
 
 [node name="Spikes2" parent="SpawnMaybe5" instance=ExtResource( 7 )]
-position = Vector2( 430, -60 )
+position = Vector2( 428, -60 )
 
 [node name="SpikeRow4_" parent="SpawnMaybe5" instance=ExtResource( 10 )]
 position = Vector2( 780, 330 )
@@ -129,11 +129,38 @@ position = Vector2( 780, 330 )
 position = Vector2( 520, 330 )
 
 [node name="SpikeRow4_3" parent="SpawnMaybe5" instance=ExtResource( 10 )]
-position = Vector2( 180, 80 )
+position = Vector2( 152, 84 )
 rotation = 1.57079
 
+[node name="TouchableZone_100x100_31" parent="SpawnMaybe5" instance=ExtResource( 16 )]
+position = Vector2( 592, 128 )
+
+[node name="TouchableZone_100x100_32" parent="SpawnMaybe5" instance=ExtResource( 16 )]
+position = Vector2( 592, -144 )
+
 [node name="Coin" parent="SpawnMaybe5" instance=ExtResource( 19 )]
-position = Vector2( 576, 172 )
+position = Vector2( 660, 128 )
+
+[node name="Coin2" parent="SpawnMaybe5" instance=ExtResource( 19 )]
+position = Vector2( 524, 128 )
+
+[node name="TouchableZone_40x40_" parent="SpawnMaybe5" instance=ExtResource( 17 )]
+position = Vector2( 836, -156 )
+
+[node name="TouchableZone_40x40_2" parent="SpawnMaybe5" instance=ExtResource( 17 )]
+position = Vector2( 832, 68 )
+
+[node name="TouchableZone_40x40_3" parent="SpawnMaybe5" instance=ExtResource( 17 )]
+position = Vector2( 316, 268 )
+
+[node name="TouchableZone_100x40_" parent="SpawnMaybe5" instance=ExtResource( 15 )]
+position = Vector2( 100, 272 )
+
+[node name="TouchableZone_100x40_2" parent="SpawnMaybe5" instance=ExtResource( 15 )]
+position = Vector2( 80, -228 )
+
+[node name="TouchableZone_100x40_3" parent="SpawnMaybe5" instance=ExtResource( 15 )]
+position = Vector2( 280, -228 )
 
 [node name="SpawnMaybe6" parent="." instance=ExtResource( 8 )]
 position = Vector2( -10, -10 )
@@ -398,11 +425,11 @@ position = Vector2( 48, -408 )
 [node name="TouchableZone_100x100_4" parent="." instance=ExtResource( 16 )]
 position = Vector2( 248, -408 )
 
-[node name="TouchableZone_100x100_5" parent="." instance=ExtResource( 16 )]
-position = Vector2( 448, -408 )
-
 [node name="TouchableZone_100x100_6" parent="." instance=ExtResource( 16 )]
 position = Vector2( 648, -408 )
+
+[node name="TouchableZone_100x100_5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 448, -408 )
 
 [node name="TouchableZone_100x100_7" parent="." instance=ExtResource( 16 )]
 position = Vector2( 848, -408 )
@@ -478,3 +505,6 @@ position = Vector2( 1040, -1008 )
 
 [node name="TouchableZone_40x100_4" parent="." instance=ExtResource( 18 )]
 position = Vector2( 812, -1288 )
+
+[node name="TouchableZone_40x100_5" parent="." instance=ExtResource( 18 )]
+position = Vector2( 40, 4 )
