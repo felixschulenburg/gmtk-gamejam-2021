@@ -23,6 +23,7 @@ var arena_prefabs = [
 ]
 
 var last_chunk
+var last_arena_prefab_id
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,14 +42,18 @@ func _process(delta):
 	var player_chunk_index = int(-player.position.y) / arena_chunk_height
 	
 	# Create new chunks if player is close enough to current last chunk
-	while player_chunk_index > last_chunk_index - 30:
+	while player_chunk_index > last_chunk_index - 3:
 		last_chunk_index += 1
 		createNewChunk(last_chunk_index)
 		
 
 func createNewChunk(chunk_index):	
 	# Get random world prefab
-	var rnd_id = randi() % arena_prefabs.size()
+	var rnd_id = last_arena_prefab_id
+	while rnd_id == last_arena_prefab_id:
+		rnd_id = randi() % arena_prefabs.size()
+		
+	last_arena_prefab_id = rnd_id
 	var new_chunk = arena_prefabs[rnd_id].instance()
 	add_child(new_chunk)
 	

@@ -5,7 +5,7 @@ var player
 
 func _ready():
 	var rndnum = randi() % 100
-	#print(rndnum)
+	#print("Rnd: %d/%d" % [rndnum,spawnProbability])
 	if rndnum > spawnProbability:
 		call_deferred("queue_free")
 		
