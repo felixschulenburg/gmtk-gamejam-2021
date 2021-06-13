@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BreakerHit_Hurt16.wav-d4325d84750e30b65682b9af1c68e9b5.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/BreakerHit_Hurt16.wav"
+dest_files=[ "res://.import/BreakerHit_Hurt16.wav-d4325d84750e30b65682b9af1c68e9b5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

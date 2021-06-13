@@ -2,7 +2,7 @@ extends Node2D
 class_name Pickup
 
 onready var sprite = $Sprite
-onready var audio = $AudioStreamPlayer2D
+onready var audio = $AudioStreamPlayer
 
 export var healthPerPickup = 1
 

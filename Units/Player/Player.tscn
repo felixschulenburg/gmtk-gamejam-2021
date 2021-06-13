@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/spider_orange.png" type="Texture" id=1]
 [ext_resource path="res://Units/Player/ChainNode.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/spider_blue.png" type="Texture" id=7]
 [ext_resource path="res://Assets/sounds/Hit_Hurt8.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/sounds/Jump20.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/sounds/BreakerHit_Hurt16.wav" type="AudioStream" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -84,11 +85,15 @@ one_shot = true
 
 [node name="PlayerUI" parent="CanvasLayer" instance=ExtResource( 4 )]
 
-[node name="HitAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="HitAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
-[node name="JumpAudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="JumpAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -20.0
+
+[node name="AttachAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [connection signal="body_entered" from="Joy" to="." method="_on_Joy_body_entered"]
 [connection signal="body_entered" from="Ned" to="." method="_on_Ned_body_entered"]
