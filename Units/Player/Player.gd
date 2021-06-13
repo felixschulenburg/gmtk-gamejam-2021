@@ -14,6 +14,8 @@ onready var camera = $Camera2D
 onready var launch_line = $LaunchLine
 onready var invulnerability_timer = $InvulnerabilityTimer
 onready var player_ui = $CanvasLayer/PlayerUI
+onready var hit_sound = $HitAudioStreamPlayer
+onready var jump_sound = $JumpAudioStreamPlayer
 
 var joy_fixed = true
 var ned_fixed = false
@@ -109,15 +111,16 @@ func _input(event):
 		var dir = get_active().global_position - drag_end
 		var spd = min(dir.length(), launch_speed)
 		launch_line.hide()
+		jump_sound.play()
 		apply_impulse(dir.normalized() * spd)
 
 func apply_impulse(v):
-		if not joy_fixed:
-			joy_anchor.body.apply_central_impulse(v)
-		for i in range(0, nodes.size()):
-			nodes[i].body.apply_central_impulse(v)
-		if not ned_fixed:
-			ned_anchor.body.apply_central_impulse(v)
+	if not joy_fixed:
+		joy_anchor.body.apply_central_impulse(v)
+	for i in range(0, nodes.size()):
+		nodes[i].body.apply_central_impulse(v)
+	if not ned_fixed:
+		ned_anchor.body.apply_central_impulse(v)
 
 func add_segment():
 	if joy_fixed:
@@ -208,11 +211,13 @@ func num_nodes():
 func on_player_joy_hit(damage):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
+		hit_sound.play()
 		self.joy_health = self.joy_health - damage
 
 func on_player_ned_hit(damage):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
+		hit_sound.play()
 		self.ned_health = self.ned_health - damage
 
 func on_player_pickup(health_add):
