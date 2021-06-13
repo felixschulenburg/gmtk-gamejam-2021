@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://World/SceneGeometry/TouchableZone_100x100.tscn" type="PackedScene" id=16]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x40.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x100.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Units/Coin.tscn" type="PackedScene" id=19]
 
 [node name="Node2D" type="StaticBody2D"]
 collision_layer = 3
@@ -40,6 +41,12 @@ rotation = -2.96706
 
 [node name="Spikes7" parent="." instance=ExtResource( 11 )]
 position = Vector2( -568, -792 )
+
+[node name="Coin3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 544, -192 )
+
+[node name="Coin4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 672, -192 )
 
 [node name="Spikes6" parent="." instance=ExtResource( 11 )]
 position = Vector2( -940, -668 )
@@ -72,12 +79,6 @@ spawnProbability = 75
 [node name="SpikeStar4_" parent="SpawnMaybe2" instance=ExtResource( 9 )]
 position = Vector2( -12, -440 )
 rotation = -1.57079
-
-[node name="Pickup" parent="SpawnMaybe2" instance=ExtResource( 5 )]
-position = Vector2( -56, 128 )
-
-[node name="Pickup2" parent="SpawnMaybe2" instance=ExtResource( 5 )]
-position = Vector2( 72, 128 )
 
 [node name="SpikeRow4_" parent="SpawnMaybe2" instance=ExtResource( 12 )]
 position = Vector2( 8, -100 )
@@ -264,14 +265,14 @@ position = Vector2( 212, -460 )
 [node name="wall_20x200_4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 212, -184 )
 
-[node name="Pickup" parent="." instance=ExtResource( 5 )]
-position = Vector2( -704, 308 )
-
 [node name="Pickup2" parent="." instance=ExtResource( 5 )]
 position = Vector2( -608, 308 )
 
-[node name="Pickup3" parent="." instance=ExtResource( 5 )]
-position = Vector2( -512, 308 )
+[node name="Coin2" parent="." instance=ExtResource( 19 )]
+position = Vector2( -512, 304 )
+
+[node name="Coin" parent="." instance=ExtResource( 19 )]
+position = Vector2( -704, 304 )
 
 [node name="Automove" parent="." instance=ExtResource( 7 )]
 position = Vector2( -896, 544 )
@@ -299,6 +300,9 @@ spawnProbability = 50
 waypoints = [ NodePath("../../Waypoint3"), NodePath("../../Waypoint4"), NodePath("../../Waypoint"), NodePath("../../Waypoint2") ]
 
 [node name="SpikeStar4_" parent="SpawnMaybe/Automove2" instance=ExtResource( 9 )]
+
+[node name="Coin" parent="SpawnMaybe" instance=ExtResource( 19 )]
+position = Vector2( -288, 136 )
 
 [node name="TouchableZone_100x100_" parent="." instance=ExtResource( 16 )]
 position = Vector2( 0, 896 )

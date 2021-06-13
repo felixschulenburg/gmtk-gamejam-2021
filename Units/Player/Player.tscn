@@ -87,6 +87,7 @@ one_shot = true
 
 [node name="HitAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -10.0
 
 [node name="JumpAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
