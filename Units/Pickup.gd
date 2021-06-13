@@ -10,6 +10,14 @@ signal player_picked_up(segments)
 
 var already_picked_up = false
 
+var animation = 0
+func _process(delta):
+	animation += delta
+	var s = 0.25
+	var tmp = sin(animation) * sin(animation) * abs(sin(animation))
+	var val = s * tmp + 1
+	scale = Vector2(val, val)
+
 func _on_Area2D_body_entered(body):
 	if not already_picked_up:
 		if body is PlayerJoy or body is PlayerNed:

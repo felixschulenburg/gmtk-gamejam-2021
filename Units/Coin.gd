@@ -12,8 +12,8 @@ var already_picked_up = false
 var rot = 0
 
 func _process(delta):
-	rot += delta * 1.2
-	var val = sin(rot)
+	rot += delta * 1
+	var val = sin(rot) * sin(rot) * 2 - 1
 	scale.x = val
 
 func _on_Area2D_body_entered(body):
