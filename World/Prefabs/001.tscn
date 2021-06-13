@@ -150,6 +150,24 @@ position = Vector2( 200, -430 )
 [node name="Coin" parent="SpawnMaybe" instance=ExtResource( 14 )]
 position = Vector2( 0, -50 )
 
+[node name="TouchableZone_100x20_13" parent="SpawnMaybe" instance=ExtResource( 11 )]
+position = Vector2( -390, -260 )
+
+[node name="TouchableZone_100x20_10" parent="SpawnMaybe" instance=ExtResource( 11 )]
+position = Vector2( 0, -280 )
+
+[node name="TouchableZone_100x20_11" parent="SpawnMaybe" instance=ExtResource( 11 )]
+position = Vector2( 0, -240 )
+
+[node name="TouchableZone_20x100_4" parent="SpawnMaybe" instance=ExtResource( 12 )]
+position = Vector2( -20, -260 )
+
+[node name="TouchableZone_20x100_5" parent="SpawnMaybe" instance=ExtResource( 12 )]
+position = Vector2( 20, -260 )
+
+[node name="TouchableZone_100x20_12" parent="SpawnMaybe" instance=ExtResource( 11 )]
+position = Vector2( 380, -260 )
+
 [node name="TouchableZone_100x100_" parent="." instance=ExtResource( 10 )]
 position = Vector2( -520, 900 )
 
@@ -204,18 +222,6 @@ position = Vector2( 200, 600 )
 [node name="TouchableZone_100x20_4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 200, 230 )
 
-[node name="TouchableZone_100x20_13" parent="." instance=ExtResource( 11 )]
-position = Vector2( -390, -260 )
-
-[node name="TouchableZone_100x20_12" parent="." instance=ExtResource( 11 )]
-position = Vector2( 380, -260 )
-
-[node name="TouchableZone_100x20_10" parent="." instance=ExtResource( 11 )]
-position = Vector2( 0, -280 )
-
-[node name="TouchableZone_100x20_11" parent="." instance=ExtResource( 11 )]
-position = Vector2( 0, -240 )
-
 [node name="TouchableZone_100x20_7" parent="." instance=ExtResource( 11 )]
 position = Vector2( -200, 230 )
 
@@ -251,12 +257,6 @@ position = Vector2( 660, -350 )
 
 [node name="TouchableZone_20x100_7" parent="." instance=ExtResource( 12 )]
 position = Vector2( -660, -350 )
-
-[node name="TouchableZone_20x100_4" parent="." instance=ExtResource( 12 )]
-position = Vector2( -20, -260 )
-
-[node name="TouchableZone_20x100_5" parent="." instance=ExtResource( 12 )]
-position = Vector2( 20, -260 )
 
 [node name="TouchableZone_100x20_3" parent="." instance=ExtResource( 11 )]
 position = Vector2( -200, 600 )

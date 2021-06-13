@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/SceneGeometry/floor_1000x20.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Units/SpikeRow4.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_100x100.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/SceneGeometry/TouchableZone_20x20.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_100x40.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/SceneGeometry/TouchableZone_40x100.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Units/Pickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Units/Coin.tscn" type="PackedScene" id=10]
 
@@ -51,67 +49,56 @@ position = Vector2( -152, 160 )
 [node name="wall_20x200_5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1000, -68 )
 
-[node name="TouchableZone_20x100_" parent="." instance=ExtResource( 8 )]
-position = Vector2( 480, -200 )
-
-[node name="TouchableZone_20x100_2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 440, -200 )
-
-[node name="TouchableZone_20x100_3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 256, -384 )
-
-[node name="TouchableZone_100x20_2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 400, -80 )
-
-[node name="TouchableZone_100x20_6" parent="." instance=ExtResource( 7 )]
-position = Vector2( -468, -428 )
-
 [node name="Pickup" parent="." instance=ExtResource( 9 )]
 position = Vector2( -724, -100 )
 
 [node name="TouchableZone_100x20_7" parent="." instance=ExtResource( 7 )]
 position = Vector2( -772, -472 )
 
-[node name="TouchableZone_100x20_5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 464, -492 )
+[node name="TouchableZone_100x20_9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 772, -472 )
 
-[node name="TouchableZone_20x20_3" parent="." instance=ExtResource( 6 )]
-position = Vector2( -172, -492 )
+[node name="TouchableZone_100x20_10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 200, -472 )
 
-[node name="TouchableZone_20x20_2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -300, -300 )
+[node name="TouchableZone_100x20_12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, -472 )
 
-[node name="TouchableZone_20x20_5" parent="." instance=ExtResource( 6 )]
-position = Vector2( -260, -300 )
-
-[node name="TouchableZone_20x20_" parent="." instance=ExtResource( 6 )]
-position = Vector2( -300, -76 )
-
-[node name="TouchableZone_20x20_4" parent="." instance=ExtResource( 6 )]
-position = Vector2( -300, -116 )
-
-[node name="TouchableZone_20x20_6" parent="." instance=ExtResource( 6 )]
-position = Vector2( -544, -96 )
-
-[node name="TouchableZone_100x20_" parent="." instance=ExtResource( 7 )]
-position = Vector2( 200, -80 )
-
-[node name="TouchableZone_100x20_3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 200, -40 )
-
-[node name="TouchableZone_100x20_4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 200, -40 )
+[node name="TouchableZone_100x20_11" parent="." instance=ExtResource( 7 )]
+position = Vector2( -200, -472 )
 
 [node name="TouchableZone_100x100_" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -12 )
+
+[node name="TouchableZone_100x100_7" parent="." instance=ExtResource( 5 )]
+position = Vector2( -200, -12 )
+
+[node name="TouchableZone_100x100_8" parent="." instance=ExtResource( 5 )]
+position = Vector2( -400, -12 )
+
+[node name="TouchableZone_100x100_9" parent="." instance=ExtResource( 5 )]
+position = Vector2( -400, -212 )
+
+[node name="TouchableZone_100x100_10" parent="." instance=ExtResource( 5 )]
+position = Vector2( -400, -412 )
 
 [node name="TouchableZone_100x100_2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, -200 )
+position = Vector2( 200, -12 )
+
+[node name="TouchableZone_100x100_4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 400, -12 )
+
+[node name="TouchableZone_100x100_5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 400, -212 )
+
+[node name="TouchableZone_100x100_6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 400, -412 )
 
 [node name="TouchableZone_100x100_3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0, -400 )
+position = Vector2( 0, -332 )
 
 [node name="wall_20x200_6" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1000, -312 )
 
-[node name="Coin" parent="." instance=ExtResource( 10 )]
-position = Vector2( 455.18, -233.597 )
+[node name="Coin2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, -364 )
