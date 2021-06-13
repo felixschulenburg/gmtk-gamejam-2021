@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Pickup_Coin25.wav-9a618086bd6315cf2080e547d304d08e.sample"
+path="res://.import/Pickup_Coin25.wav-df95700c96234a8a16e86dec3981e2e3.sample"
 
 [deps]
 
-source_file="res://assets/sounds/Pickup_Coin25.wav"
-dest_files=[ "res://.import/Pickup_Coin25.wav-9a618086bd6315cf2080e547d304d08e.sample" ]
+source_file="res://Assets/sounds/Pickup_Coin25.wav"
+dest_files=[ "res://.import/Pickup_Coin25.wav-df95700c96234a8a16e86dec3981e2e3.sample" ]
 
 [params]
 

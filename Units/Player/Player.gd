@@ -16,6 +16,7 @@ onready var invulnerability_timer = $InvulnerabilityTimer
 onready var player_ui = $CanvasLayer/PlayerUI
 onready var hit_sound = $HitAudioStreamPlayer
 onready var jump_sound = $JumpAudioStreamPlayer
+onready var attach_sound = $AttachAudioStreamPlayer
 
 var joy_fixed = true
 var ned_fixed = false
@@ -111,6 +112,7 @@ func _input(event):
 		var dir = get_active().global_position - drag_end
 		var spd = min(dir.length(), launch_speed)
 		launch_line.hide()
+#		jump_sound.pitch_scale = 1 + spd / launch_speed
 		jump_sound.play()
 		apply_impulse(dir.normalized() * spd)
 
@@ -170,6 +172,7 @@ func remove_segment():
 
 func toggle_fixed():
 	if probing:
+		attach_sound.play()
 		probing = false
 		joy_fixed = not joy_fixed
 		if joy_fixed:
