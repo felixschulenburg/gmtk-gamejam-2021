@@ -13,7 +13,8 @@ func _ready():
 	
 	for node in get_children():
 		if node is Spike:
-			node.connect("player_hit_by_spike", player, "on_player_hit")
+			node.connect("player_joy_hit_by_spike", player, "on_player_joy_hit")
+			node.connect("player_ned_hit_by_spike", player, "on_player_ned_hit")
 		if node is Pickup:
 			node.connect("player_picked_up", player, "on_player_pickup")
 		if node is TouchableZone:

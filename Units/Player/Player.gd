@@ -23,7 +23,9 @@ export var num_segments = 20
 export var len_segments = 10
 export var launch_speed = 250
 
-var health setget set_health, get_health
+var joy_health = 5 setget set_joy_health, get_joy_health
+var ned_health = 5 setget set_ned_health, get_ned_health
+
 var nodes = []
 var segments = []
 
@@ -36,6 +38,9 @@ signal player_died
 func _ready():
 	launch_line.add_point(Vector2.ZERO)
 	launch_line.add_point(Vector2.ZERO)
+		
+	self.joy_health = start_health
+	self.ned_health = start_health
 	
 	if joy_fixed:
 		joy.mode = RigidBody2D.MODE_STATIC
@@ -64,10 +69,8 @@ func _ready():
 		n1.add_child(s)
 		s.set_nodes(n1, n2)
 		segments.push_back(s)
-	
-	self.health = start_health
 
-func _process(delta):	
+func _process(delta):
 	if dragging:
 		launch_line.points[0] = get_active().global_position
 		launch_line.points[1] = get_global_mouse_position()
@@ -140,7 +143,6 @@ func remove_segment():
 			var n = nodes.pop_back()
 	#		s.call_deferred("queue_free")
 			n.call_deferred(("queue_free"))
-#			update_segment_length(-1)
 		
 		elif ned_fixed:
 			joy.global_position = nodes[1].body.global_position
@@ -149,12 +151,6 @@ func remove_segment():
 			var n = nodes.pop_front()
 	#		s.call_deferred("queue_free")
 			n.call_deferred(("queue_free"))
-#			update_segment_length(0)
-
-#func update_segment_length(i):
-#	# hack
-#	segments[i].joint.disable_collision = !segments[i].joint.disable_collision
-#	segments[i].joint.disable_collision = !segments[i].joint.disable_collision
 
 func toggle_fixed():
 	if probing:
@@ -171,13 +167,21 @@ func toggle_fixed():
 		else:
 			ned.mode = RigidBody2D.MODE_RIGID
 
-func set_health(value):
-	health = value
-	player_ui.health = value
+func set_joy_health(value):
+	joy_health = value
+	player_ui.joy_health = value
 	check_health()
 
-func get_health():
-	return health
+func set_ned_health(value):
+	ned_health = value
+	player_ui.ned_health = value
+	check_health()
+
+func get_joy_health():
+	return joy_health
+	
+func get_ned_health():
+	return ned_health
 
 func get_active():
 	return joy if not joy_fixed else ned
@@ -188,14 +192,22 @@ func get_inactive():
 func num_nodes():
 	return num_segments - 1
 
-func on_player_hit(damage):
+func on_player_joy_hit(damage):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
-		self.health = self.health - damage
+		self.joy_health = self.joy_health - damage
+
+func on_player_ned_hit(damage):
+	if invulnerability_timer.is_stopped():
+		invulnerability_timer.start()
+		self.ned_health = self.ned_health - damage
 
 func on_player_pickup(health_add):
-	self.health = self.health + health_add
+	if joy_fixed:
+		self.joy_health = self.joy_health + health_add
+	elif ned_fixed:
+		self.ned_health = self.ned_health + health_add
 
 func check_health():
-	if self.health <= 0:
+	if self.joy_health <= 0 or self.ned_health <= 0:
 		emit_signal("player_died")
