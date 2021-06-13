@@ -18,7 +18,7 @@ var arena_prefabs = [
 	preload("Prefabs/001.tscn"),
 	preload("Prefabs/002.tscn"),
 	preload("Prefabs/003.tscn"),
-	preload("Prefabs/004.tscn"),
+	#preload("Prefabs/004.tscn"),
 	preload("Prefabs/005.tscn")
 ]
 

@@ -43,11 +43,9 @@ spawnProbability = 60
 
 [node name="wall_20x100_" parent="SpawnMaybe5" instance=ExtResource( 8 )]
 position = Vector2( 512, 52 )
-scale = Vector2( 1, 1 )
 
 [node name="wall_20x100_2" parent="SpawnMaybe5" instance=ExtResource( 8 )]
 position = Vector2( 512, -56 )
-scale = Vector2( 1, 1 )
 
 [node name="floor_200x20_" parent="SpawnMaybe5" instance=ExtResource( 11 )]
 position = Vector2( 432, -464 )
@@ -142,8 +140,16 @@ rotation = -1.5708
 position = Vector2( 592, 224 )
 spawnProbability = 50
 
+[node name="wall_20x100_2" parent="SpawnMaybe" instance=ExtResource( 8 )]
+position = Vector2( 4, 360 )
+rotation = 3.14159
+
 [node name="Spikes" parent="SpawnMaybe" instance=ExtResource( 5 )]
 position = Vector2( 72, 160 )
+rotation = 3.14159
+
+[node name="Spikes4" parent="SpawnMaybe" instance=ExtResource( 5 )]
+position = Vector2( 304, -36 )
 rotation = 3.14159
 
 [node name="Spikes2" parent="SpawnMaybe" instance=ExtResource( 5 )]
@@ -184,6 +190,35 @@ rotation = -0.261799
 
 [node name="wall_20x1001" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1000, 0 )
+
+[node name="SpawnMaybe6" parent="." instance=ExtResource( 7 )]
+position = Vector2( -776, -328 )
+
+[node name="Spikes" parent="SpawnMaybe6" instance=ExtResource( 5 )]
+position = Vector2( -184, 184 )
+rotation = 0.785397
+
+[node name="Spikes2" parent="SpawnMaybe6" instance=ExtResource( 5 )]
+position = Vector2( 36, 8 )
+rotation = 3.92699
+
+[node name="Spikes3" parent="SpawnMaybe6" instance=ExtResource( 5 )]
+position = Vector2( -176, 452 )
+rotation = 7.85397
+
+[node name="floor_100x20_" parent="SpawnMaybe6" instance=ExtResource( 9 )]
+position = Vector2( 116, 20 )
+rotation = 0.785397
+
+[node name="wall_20x200_2" parent="SpawnMaybe6" instance=ExtResource( 10 )]
+position = Vector2( 180, 276 )
+
+[node name="floor_100x20_3" parent="SpawnMaybe6" instance=ExtResource( 9 )]
+position = Vector2( 116, 20 )
+rotation = 0.785397
+
+[node name="floor_100x20_2" parent="SpawnMaybe6" instance=ExtResource( 9 )]
+position = Vector2( -116, 220 )
 
 [node name="wall_20x1000" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1000, 0 )
