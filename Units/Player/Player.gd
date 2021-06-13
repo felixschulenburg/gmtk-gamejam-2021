@@ -92,13 +92,13 @@ func _physics_process(delta):
 	camera.global_position = get_inactive().global_position
 
 func _input(event):
-	if Input.is_action_just_pressed("scroll_up"):
-		add_segment()
-		
-	if Input.is_action_just_pressed("scroll_down"):
-		remove_segment()
-		
-	if Input.is_action_pressed("action_space") or event.is_action_pressed("click_right"):
+#	if Input.is_action_just_pressed("scroll_up"):
+#		add_segment()
+#
+#	if Input.is_action_just_pressed("scroll_down"):
+#		remove_segment()
+	
+	if event.is_action_pressed("click_right"):
 		probing = true
 		emit_signal("probe_touchable")
 	
@@ -124,51 +124,51 @@ func apply_impulse(v):
 	if not ned_fixed:
 		ned_anchor.body.apply_central_impulse(v)
 
-func add_segment():
-	if joy_fixed:
-		var n = ChainNodeScene.instance()
-		add_child(n)
-		n.global_position = ned.global_position
-		nodes.push_back(n)
-		
-		ned.global_position = ned.global_position + (nodes[-1].global_position - nodes[-2].global_position).normalized() * len_segments
-		segments[-1].set_nodes(nodes[-2].body, nodes[-1].body)
-		
-		var s = ChainJointScene.instance()
-		n.body.add_child(s)
-		s.set_nodes(nodes[-1].body, ned_anchor.body)
-		segments.push_back(s)
-	
-	elif ned_fixed:
-		var n = ChainNodeScene.instance()
-		add_child(n)
-		n.global_position = joy.global_position
-		nodes.push_front(n)
-		
-		segments[0].set_nodes(nodes[0].body, nodes[1].body)
-		
-		var s = ChainJointScene.instance()
-		n.body.add_child(s)
-		s.set_nodes(joy_anchor.body, nodes[0].body)
-		segments.push_front(s)
-
-func remove_segment():
-	if nodes.size() > 1 and segments.size() > 2:
-		if joy_fixed:
-			ned.global_position = nodes[-1].body.global_position
-			segments[-2].set_nodes(nodes[-2].body, ned_anchor.body)
-			var s = segments.pop_back()
-			var n = nodes.pop_back()
-	#		s.call_deferred("queue_free")
-			n.call_deferred(("queue_free"))
-		
-		elif ned_fixed:
-			joy.global_position = nodes[1].body.global_position
-			segments[0].set_nodes(joy_anchor.body, nodes[1].body)
-			segments.remove(1)
-			var n = nodes.pop_front()
-	#		s.call_deferred("queue_free")
-			n.call_deferred(("queue_free"))
+#func add_segment():
+#	if joy_fixed:
+#		var n = ChainNodeScene.instance()
+#		add_child(n)
+#		n.global_position = ned.global_position
+#		nodes.push_back(n)
+#
+#		ned.global_position = ned.global_position + (nodes[-1].global_position - nodes[-2].global_position).normalized() * len_segments
+#		segments[-1].set_nodes(nodes[-2].body, nodes[-1].body)
+#
+#		var s = ChainJointScene.instance()
+#		n.body.add_child(s)
+#		s.set_nodes(nodes[-1].body, ned_anchor.body)
+#		segments.push_back(s)
+#
+#	elif ned_fixed:
+#		var n = ChainNodeScene.instance()
+#		add_child(n)
+#		n.global_position = joy.global_position
+#		nodes.push_front(n)
+#
+#		segments[0].set_nodes(nodes[0].body, nodes[1].body)
+#
+#		var s = ChainJointScene.instance()
+#		n.body.add_child(s)
+#		s.set_nodes(joy_anchor.body, nodes[0].body)
+#		segments.push_front(s)
+#
+#func remove_segment():
+#	if nodes.size() > 1 and segments.size() > 2:
+#		if joy_fixed:
+#			ned.global_position = nodes[-1].body.global_position
+#			segments[-2].set_nodes(nodes[-2].body, ned_anchor.body)
+#			var s = segments.pop_back()
+#			var n = nodes.pop_back()
+#	#		s.call_deferred("queue_free")
+#			n.call_deferred(("queue_free"))
+#
+#		elif ned_fixed:
+#			joy.global_position = nodes[1].body.global_position
+#			segments[0].set_nodes(joy_anchor.body, nodes[1].body)
+#			segments.remove(1)
+#			var n = nodes.pop_front()
+#	#		s.call_deferred("queue_free")
+#			n.call_deferred(("queue_free"))
 
 func toggle_fixed():
 	if probing:

@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Assets/styles/FontComic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/styles/StyleFlatHover.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/styles/StyleFlatNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/styles/StyleFlatPressedl.tres" type="StyleBox" id=5]
 
-[sub_resource type="Environment" id=1]
-background_mode = 1
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/fonts/COMIC.TTF"
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 2 )
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,26 +20,45 @@ script = ExtResource( 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 164.135
-margin_top = 326.622
-margin_right = 627.135
-margin_bottom = 440.622
+margin_left = 164.0
+margin_top = 327.0
+margin_right = 932.0
+margin_bottom = 583.0
+custom_fonts/font = SubResource( 3 )
 text = "Game Over"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
 margin_left = 153.0
 margin_top = 449.0
 margin_right = 650.0
 margin_bottom = 510.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 2 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+margin_left = 153.0
+margin_top = 449.0
+margin_right = 650.0
+margin_bottom = 510.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_QuitButton_pressed"]

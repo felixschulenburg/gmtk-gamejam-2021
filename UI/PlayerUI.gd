@@ -19,8 +19,8 @@ func set_joy_health(value):
 	for i in range(joy_health):
 		var health_symbol = HealthSymbolScene.instance()
 		add_child(health_symbol)
-		health_symbol.rect_position = Vector2(32 + i * 64, 32)
-		health_symbol.texture = load("res://Assets/heart_blue.png")
+		health_symbol.rect_position = Vector2(32 + 64 + i * 64, 32)
+		health_symbol.texture = load("res://Assets/heart.png")
 		joy_health_symbols.push_back(health_symbol)
 
 func set_ned_health(value):
@@ -31,8 +31,8 @@ func set_ned_health(value):
 	for i in range(ned_health):
 		var health_symbol = HealthSymbolScene.instance()
 		add_child(health_symbol)
-		health_symbol.rect_position = Vector2(32 + i * 64, 96)
-		health_symbol.texture = load("res://Assets/heart_orange.png")
+		health_symbol.rect_position = Vector2(32 + 64 + i * 64, 96)
+		health_symbol.texture = load("res://Assets/heart.png")
 		ned_health_symbols.push_back(health_symbol)
 
 func get_joy_health():
