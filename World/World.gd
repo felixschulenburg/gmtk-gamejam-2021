@@ -3,6 +3,7 @@ extends Node2D
 onready var player = $Player
 onready var arena = $Arena
 onready var menu = $CanvasLayer/PopupMenu
+onready var music = $AudioStreamPlayer
 
 var menu_open = false
 
@@ -28,3 +29,7 @@ func _on_ContinueButton_pressed():
 
 func _on_Restart_pressed():
 	get_tree().change_scene('res://World/World.tscn')
+
+
+func _on_AudioStreamPlayer_finished():
+	music.play()

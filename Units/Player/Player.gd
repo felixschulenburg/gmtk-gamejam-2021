@@ -78,7 +78,7 @@ func _ready():
 	apply_impulse(Vector2(0.5 * launch_speed, 0))
 
 func _process(delta):
-	self.score = max(score, round(max(0, -get_active().global_position[1] / 100)) * 10)
+	self.score = max(score, round(-get_active().global_position[1] / 100) * 10)
 	
 	if dragging:
 		var p1 = get_active().global_position

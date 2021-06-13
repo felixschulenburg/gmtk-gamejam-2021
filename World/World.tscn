@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Units/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Arena.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Styles/StyleFlatHover.tres" type="StyleBox" id=7]
 [ext_resource path="res://Assets/styles/StyleFlatHover.tres" type="StyleBox" id=8]
 [ext_resource path="res://Assets/styles/StyleFlatPressedl.tres" type="StyleBox" id=9]
+[ext_resource path="res://Assets/sounds/music.wav" type="AudioStream" id=10]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.759717, 1 )
@@ -108,9 +109,15 @@ custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = SubResource( 8 )
 text = "Restart"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+autoplay = true
+
 [connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
 [connection signal="about_to_show" from="CanvasLayer/PopupMenu" to="." method="_on_PopupMenu_about_to_show"]
 [connection signal="popup_hide" from="CanvasLayer/PopupMenu" to="." method="_on_PopupMenu_popup_hide"]
 [connection signal="pressed" from="CanvasLayer/PopupMenu/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/PopupMenu/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/PopupMenu/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
