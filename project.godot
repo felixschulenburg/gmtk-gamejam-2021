@@ -25,11 +25,6 @@ _global_script_classes=[ {
 "path": "res://Units/Player/ChainNodeBody.gd"
 }, {
 "base": "Node2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://Units/Enemy.gd"
-}, {
-"base": "Node2D",
 "class": "Pickup",
 "language": "GDScript",
 "path": "res://Units/Pickup.gd"
@@ -40,9 +35,14 @@ _global_script_classes=[ {
 "path": "res://Units/Player/Player.gd"
 }, {
 "base": "RigidBody2D",
-"class": "Projectile",
+"class": "PlayerJoy",
 "language": "GDScript",
-"path": "res://Units/Player/Projectile.gd"
+"path": "res://Units/Player/PlayerJoy.gd"
+}, {
+"base": "RigidBody2D",
+"class": "PlayerNed",
+"language": "GDScript",
+"path": "res://Units/Player/PlayerNed.gd"
 }, {
 "base": "Node2D",
 "class": "Spike",
@@ -58,10 +58,10 @@ _global_script_class_icons={
 "ChainJoint": "",
 "ChainNode": "",
 "ChainNodeBody": "",
-"Enemy": "",
 "Pickup": "",
 "Player": "",
-"Projectile": "",
+"PlayerJoy": "",
+"PlayerNed": "",
 "Spike": "",
 "TouchableZone": ""
 }
