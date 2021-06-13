@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
@@ -14,6 +14,10 @@
 [ext_resource path="res://Units/SpikeRow4.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/SceneGeometry/floor_100x20.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/SceneGeometry/floor_500x20.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/SceneGeometry/TouchableZone_100x40.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/SceneGeometry/TouchableZone_100x100.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/SceneGeometry/TouchableZone_40x40.tscn" type="PackedScene" id=17]
+[ext_resource path="res://World/SceneGeometry/TouchableZone_40x100.tscn" type="PackedScene" id=18]
 
 [node name="Node2D" type="StaticBody2D"]
 collision_layer = 3
@@ -32,10 +36,6 @@ rotation = 1.57079
 
 [node name="Spikes" parent="." instance=ExtResource( 11 )]
 position = Vector2( -756, -264 )
-rotation = -2.96706
-
-[node name="Spikes3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -68.0001, -420 )
 rotation = -2.96706
 
 [node name="Spikes7" parent="." instance=ExtResource( 11 )]
@@ -64,6 +64,64 @@ rotation = 0.174533
 [node name="floor_500x20_3" parent="." instance=ExtResource( 14 )]
 position = Vector2( -516, -548 )
 rotation = 0.174533
+scale = Vector2( 1, 1 )
+
+[node name="SpawnMaybe2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 600, -304 )
+spawnProbability = 75
+
+[node name="SpikeStar4_" parent="SpawnMaybe2" instance=ExtResource( 9 )]
+position = Vector2( -12, -440 )
+rotation = -1.57079
+
+[node name="Pickup" parent="SpawnMaybe2" instance=ExtResource( 5 )]
+position = Vector2( -56, 128 )
+
+[node name="Pickup2" parent="SpawnMaybe2" instance=ExtResource( 5 )]
+position = Vector2( 72, 128 )
+
+[node name="SpikeRow4_" parent="SpawnMaybe2" instance=ExtResource( 12 )]
+position = Vector2( 8, -100 )
+
+[node name="SpikeRow4_2" parent="SpawnMaybe2" instance=ExtResource( 12 )]
+position = Vector2( -388, -112 )
+rotation = 1.5708
+
+[node name="SpikeRow4_3" parent="SpawnMaybe2" instance=ExtResource( 12 )]
+position = Vector2( 8, 284 )
+
+[node name="TouchableZone_100x40_15" parent="SpawnMaybe2" instance=ExtResource( 15 )]
+position = Vector2( -388, -392 )
+rotation = 3.14159
+
+[node name="TouchableZone_100x40_16" parent="SpawnMaybe2" instance=ExtResource( 15 )]
+position = Vector2( 8.00006, -300 )
+rotation = 3.14159
+
+[node name="TouchableZone_100x40_18" parent="SpawnMaybe2" instance=ExtResource( 15 )]
+position = Vector2( 8, 12 )
+rotation = 3.14159
+
+[node name="TouchableZone_40x100_" parent="SpawnMaybe2" instance=ExtResource( 18 )]
+position = Vector2( 256, -148 )
+rotation = 3.14159
+
+[node name="TouchableZone_40x100_2" parent="SpawnMaybe2" instance=ExtResource( 18 )]
+position = Vector2( -240, -148 )
+rotation = 3.14159
+
+[node name="TouchableZone_100x40_17" parent="SpawnMaybe2" instance=ExtResource( 15 )]
+position = Vector2( 200, -428 )
+rotation = 3.14159
+
+[node name="floor_200x20_2" parent="SpawnMaybe2" instance=ExtResource( 4 )]
+position = Vector2( 8, -80 )
+
+[node name="wall_20x100_" parent="SpawnMaybe2" instance=ExtResource( 6 )]
+position = Vector2( -640, -236 )
+
+[node name="wall_20x100_2" parent="SpawnMaybe2" instance=ExtResource( 6 )]
+position = Vector2( -640, -348 )
 
 [node name="SpawnMaybe4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 112, 108 )
@@ -82,6 +140,9 @@ position = Vector2( 644, 100 )
 [node name="floor_500x20_" parent="." instance=ExtResource( 14 )]
 position = Vector2( 288, 260 )
 
+[node name="TouchableZone_100x40_7" parent="." instance=ExtResource( 15 )]
+position = Vector2( -836, -148 )
+
 [node name="SpawnMaybe3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 4, 368 )
 spawnProbability = 65
@@ -95,34 +156,51 @@ position = Vector2( 496, 272 )
 [node name="floor_200x20_" parent="SpawnMaybe3" instance=ExtResource( 4 )]
 position = Vector2( 412, 92 )
 
-[node name="SpawnMaybe2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 600, -304 )
-spawnProbability = 75
+[node name="SpikeStar4_" parent="SpawnMaybe3" instance=ExtResource( 9 )]
+position = Vector2( -100, 80 )
 
-[node name="Spikes" parent="SpawnMaybe2" instance=ExtResource( 11 )]
-position = Vector2( -340, 80 )
-rotation = 1.5708
+[node name="TouchableZone_40x40_3" parent="SpawnMaybe3" instance=ExtResource( 17 )]
+position = Vector2( 48, 84 )
 
-[node name="SpikeStar4_" parent="SpawnMaybe2" instance=ExtResource( 9 )]
-position = Vector2( -12, -440 )
-rotation = -1.57079
+[node name="TouchableZone_100x40_5" parent="SpawnMaybe3" instance=ExtResource( 15 )]
+position = Vector2( 316, -20 )
 
-[node name="Spikes2" parent="SpawnMaybe2" instance=ExtResource( 11 )]
-position = Vector2( 348, 80 )
-rotation = 4.71239
+[node name="TouchableZone_40x40_2" parent="SpawnMaybe3" instance=ExtResource( 17 )]
+position = Vector2( 48, 84 )
 
-[node name="Pickup" parent="SpawnMaybe2" instance=ExtResource( 5 )]
-position = Vector2( 8, 120 )
+[node name="TouchableZone_100x40_" parent="SpawnMaybe3" instance=ExtResource( 15 )]
+position = Vector2( 516, -20 )
 
-[node name="SpikeRow4_" parent="SpawnMaybe2" instance=ExtResource( 12 )]
-position = Vector2( 8, -100 )
+[node name="TouchableZone_100x40_8" parent="." instance=ExtResource( 15 )]
+position = Vector2( -672, -432 )
 
-[node name="SpikeRow4_2" parent="SpawnMaybe2" instance=ExtResource( 12 )]
-position = Vector2( -368, -228 )
-rotation = 1.5708
+[node name="TouchableZone_100x40_9" parent="." instance=ExtResource( 15 )]
+position = Vector2( -412, -376 )
 
-[node name="SpikeRow4_3" parent="SpawnMaybe2" instance=ExtResource( 12 )]
-position = Vector2( 8, 284 )
+[node name="TouchableZone_100x40_10" parent="." instance=ExtResource( 15 )]
+position = Vector2( -104, -312 )
+
+[node name="TouchableZone_100x40_11" parent="." instance=ExtResource( 15 )]
+position = Vector2( -104, -312 )
+
+[node name="TouchableZone_100x40_12" parent="." instance=ExtResource( 15 )]
+position = Vector2( -188, -628 )
+
+[node name="TouchableZone_100x40_13" parent="." instance=ExtResource( 15 )]
+position = Vector2( -496, -656 )
+
+[node name="TouchableZone_100x40_14" parent="." instance=ExtResource( 15 )]
+position = Vector2( -804, -732 )
+rotation = -3.14159
+
+[node name="TouchableZone_100x40_6" parent="." instance=ExtResource( 15 )]
+position = Vector2( -320, -84 )
+
+[node name="TouchableZone_40x100_" parent="." instance=ExtResource( 18 )]
+position = Vector2( 72, -504 )
+
+[node name="TouchableZone_40x100_2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 72, -504 )
 
 [node name="wall_20x200_2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -220, 184 )
@@ -144,9 +222,6 @@ position = Vector2( -180, -80 )
 
 [node name="wall_20x100_4" parent="floor_200x20_4" instance=ExtResource( 6 )]
 position = Vector2( -180, -180 )
-
-[node name="floor_200x20_2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 608, -384 )
 
 [node name="floor_200x20_3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 640 )
@@ -191,7 +266,13 @@ position = Vector2( 212, -460 )
 position = Vector2( 212, -184 )
 
 [node name="Pickup" parent="." instance=ExtResource( 5 )]
-position = Vector2( -603.197, 307.157 )
+position = Vector2( -704, 308 )
+
+[node name="Pickup2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -608, 308 )
+
+[node name="Pickup3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -512, 308 )
 
 [node name="Automove" parent="." instance=ExtResource( 7 )]
 position = Vector2( -896, 544 )
@@ -212,14 +293,120 @@ position = Vector2( -320, 544 )
 position = Vector2( -896, 544 )
 
 [node name="SpawnMaybe" parent="." instance=ExtResource( 10 )]
+position = Vector2( -320, 96 )
 spawnProbability = 50
 
 [node name="Automove2" parent="SpawnMaybe" instance=ExtResource( 7 )]
-position = Vector2( -896, 544 )
 waypoints = [ NodePath("../../Waypoint3"), NodePath("../../Waypoint4"), NodePath("../../Waypoint"), NodePath("../../Waypoint2") ]
 
 [node name="SpikeStar4_" parent="SpawnMaybe/Automove2" instance=ExtResource( 9 )]
-position = Vector2( 576, -448 )
 
-[node name="SpikeStar4_" parent="." instance=ExtResource( 9 )]
-position = Vector2( -96, 448 )
+[node name="TouchableZone_100x100_" parent="." instance=ExtResource( 16 )]
+position = Vector2( 0, 896 )
+
+[node name="TouchableZone_100x100_16" parent="." instance=ExtResource( 16 )]
+position = Vector2( 200, 896 )
+
+[node name="TouchableZone_100x100_20" parent="." instance=ExtResource( 16 )]
+position = Vector2( -4, -900 )
+
+[node name="TouchableZone_100x100_24" parent="." instance=ExtResource( 16 )]
+position = Vector2( -204, -900 )
+
+[node name="TouchableZone_100x100_25" parent="." instance=ExtResource( 16 )]
+position = Vector2( -404, -900 )
+
+[node name="TouchableZone_100x100_26" parent="." instance=ExtResource( 16 )]
+position = Vector2( -604, -900 )
+
+[node name="TouchableZone_100x100_21" parent="." instance=ExtResource( 16 )]
+position = Vector2( 196, -900 )
+
+[node name="TouchableZone_100x100_22" parent="." instance=ExtResource( 16 )]
+position = Vector2( 396, -900 )
+
+[node name="TouchableZone_100x100_23" parent="." instance=ExtResource( 16 )]
+position = Vector2( 596, -900 )
+
+[node name="TouchableZone_40x40_" parent="." instance=ExtResource( 17 )]
+position = Vector2( 288, 636 )
+
+[node name="TouchableZone_40x40_4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 496, 520 )
+
+[node name="TouchableZone_40x40_5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 576, 520 )
+
+[node name="TouchableZone_40x40_6" parent="." instance=ExtResource( 17 )]
+position = Vector2( -576, -196 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -72, -420 )
+rotation = -2.96706
+scale = Vector2( 1, 1 )
+
+[node name="TouchableZone_40x40_7" parent="." instance=ExtResource( 17 )]
+position = Vector2( -852, -300 )
+
+[node name="TouchableZone_40x40_8" parent="." instance=ExtResource( 17 )]
+position = Vector2( -852, -380 )
+
+[node name="TouchableZone_100x100_17" parent="." instance=ExtResource( 16 )]
+position = Vector2( 808, 412 )
+
+[node name="TouchableZone_100x40_2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 756, 100 )
+
+[node name="TouchableZone_100x40_3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 556, 100 )
+
+[node name="TouchableZone_100x40_4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 356, 100 )
+
+[node name="TouchableZone_100x100_18" parent="." instance=ExtResource( 16 )]
+position = Vector2( 808, 412 )
+
+[node name="TouchableZone_100x100_19" parent="." instance=ExtResource( 16 )]
+position = Vector2( -16, 116 )
+
+[node name="TouchableZone_100x100_2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -200, 896 )
+
+[node name="TouchableZone_100x100_15" parent="." instance=ExtResource( 16 )]
+position = Vector2( -328, 896 )
+
+[node name="TouchableZone_100x100_3" parent="." instance=ExtResource( 16 )]
+position = Vector2( -328, 696 )
+
+[node name="TouchableZone_100x100_4" parent="." instance=ExtResource( 16 )]
+position = Vector2( -336, 496 )
+
+[node name="TouchableZone_100x100_5" parent="." instance=ExtResource( 16 )]
+position = Vector2( -324, 296 )
+
+[node name="TouchableZone_100x100_6" parent="." instance=ExtResource( 16 )]
+position = Vector2( -328, 100 )
+
+[node name="TouchableZone_100x100_7" parent="." instance=ExtResource( 16 )]
+position = Vector2( -528, 100 )
+
+[node name="TouchableZone_100x100_8" parent="." instance=ExtResource( 16 )]
+position = Vector2( -728, 100 )
+
+[node name="TouchableZone_100x100_9" parent="." instance=ExtResource( 16 )]
+position = Vector2( -900, 104 )
+
+[node name="TouchableZone_100x100_10" parent="." instance=ExtResource( 16 )]
+position = Vector2( -896, 296 )
+
+[node name="TouchableZone_100x100_11" parent="." instance=ExtResource( 16 )]
+position = Vector2( -904, 480 )
+
+[node name="TouchableZone_100x100_12" parent="." instance=ExtResource( 16 )]
+position = Vector2( -904, 528 )
+
+[node name="TouchableZone_100x100_13" parent="." instance=ExtResource( 16 )]
+position = Vector2( -708, 544 )
+
+[node name="TouchableZone_100x100_14" parent="." instance=ExtResource( 16 )]
+position = Vector2( -524, 560 )
