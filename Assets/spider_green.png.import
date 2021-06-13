@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider_green.png-bb8615aa613f929fb302bf98d84db6b5.stex"
+path="res://.import/spider_green.png-77e74d819b9ba6739104376cbd6941d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/spider_green.png"
-dest_files=[ "res://.import/spider_green.png-bb8615aa613f929fb302bf98d84db6b5.stex" ]
+source_file="res://assets/spider_green.png"
+dest_files=[ "res://.import/spider_green.png-77e74d819b9ba6739104376cbd6941d3.stex" ]
 
 [params]
 

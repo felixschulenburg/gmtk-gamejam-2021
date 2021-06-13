@@ -81,15 +81,22 @@ position = Vector2( 0, -740 )
 [node name="SpikeRow4_2" parent="SpawnMaybe4" instance=ExtResource( 9 )]
 position = Vector2( 370, -740 )
 
+[node name="SpawnMaybe7" parent="." instance=ExtResource( 6 )]
+position = Vector2( -910, -30 )
+spawnProbability = 65
+
+[node name="SpikeRow4_2" parent="SpawnMaybe7" instance=ExtResource( 9 )]
+position = Vector2( 1890, -150 )
+rotation = -1.57079
+
+[node name="Pickup" parent="SpawnMaybe7" instance=ExtResource( 5 )]
+position = Vector2( 1780, -220 )
+
 [node name="SpawnMaybe5" parent="." instance=ExtResource( 6 )]
-spawnProbability = 75
+spawnProbability = 65
 
 [node name="SpikeRow4_" parent="SpawnMaybe5" instance=ExtResource( 9 )]
 position = Vector2( 0, -740 )
-
-[node name="SpikeRow4_2" parent="SpawnMaybe5" instance=ExtResource( 9 )]
-position = Vector2( 980, -180 )
-rotation = -1.57079
 
 [node name="SpikeRow4_3" parent="SpawnMaybe5" instance=ExtResource( 9 )]
 position = Vector2( -980, -180 )

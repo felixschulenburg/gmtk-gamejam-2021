@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart_orange.png-0c90229b92ee3425239768ca9d35a39d.stex"
+path="res://.import/heart_orange.png-31e0a47046104d2d4f7ae87c59da2e72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/heart_orange.png"
-dest_files=[ "res://.import/heart_orange.png-0c90229b92ee3425239768ca9d35a39d.stex" ]
+source_file="res://assets/heart_orange.png"
+dest_files=[ "res://.import/heart_orange.png-31e0a47046104d2d4f7ae87c59da2e72.stex" ]
 
 [params]
 
