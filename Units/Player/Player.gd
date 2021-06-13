@@ -13,21 +13,23 @@ onready var ned_anchor = $Ned/Anchor
 onready var camera = $Camera2D
 onready var launch_line = $LaunchLine
 onready var invulnerability_timer = $InvulnerabilityTimer
-onready var health_label = $CanvasLayer/HealthPanel/HealthLabel
+onready var player_ui = $CanvasLayer/PlayerUI
 
 var joy_fixed = true
 var ned_fixed = false
 
-export var health = 5
+export var start_health = 5
 export var num_segments = 20
 export var len_segments = 10
 export var launch_speed = 250
 
+var health setget set_health, get_health
 var nodes = []
 var segments = []
 
 var dragging = false
 
+signal probe_touchable
 signal player_died
 
 func _ready():
@@ -61,10 +63,10 @@ func _ready():
 		n1.add_child(s)
 		s.set_nodes(n1, n2)
 		segments.push_back(s)
-
-func _process(delta):
-	health_label.text = "Health: " + str(health)
 	
+	self.health = start_health
+
+func _process(delta):	
 	if dragging:
 		launch_line.points[0] = get_active().global_position
 		launch_line.points[1] = get_global_mouse_position()
@@ -80,7 +82,7 @@ func _input(event):
 		remove_segment()
 		
 	if Input.is_action_pressed("action_space") or event.is_action_pressed("click_right"):
-		toggle_fixed()
+		emit_signal("probe_touchable")
 	
 	if event.is_action_pressed("click_left") and not dragging:
 		dragging = true
@@ -165,8 +167,13 @@ func toggle_fixed():
 	else:
 		ned.mode = RigidBody2D.MODE_RIGID
 
-func get_center():
-	return (joy.global_position - ned.global_position) / 2
+func set_health(value):
+	health = value
+	player_ui.health = value
+	check_health()
+
+func get_health():
+	return health
 
 func get_active():
 	return joy if not joy_fixed else ned
@@ -180,12 +187,11 @@ func num_nodes():
 func on_player_hit(damage):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
-		health = health - damage
-		check_health()
+		self.health = self.health - damage
 
 func on_player_pickup(health_add):
-	health = health + health_add
+	self.health = self.health + health_add
 
 func check_health():
-	if health <= 0:
+	if self.health <= 0:
 		emit_signal("player_died")
