@@ -382,19 +382,19 @@ position = Vector2( 680, 680 )
 position = Vector2( -496, 672 )
 
 [node name="TouchableZone_100x100_4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 448, -672 )
+position = Vector2( 400, -736 )
 
 [node name="TouchableZone_100x100_5" parent="." instance=ExtResource( 14 )]
-position = Vector2( 248, -736 )
+position = Vector2( 200, -736 )
 
 [node name="TouchableZone_100x100_6" parent="." instance=ExtResource( 14 )]
-position = Vector2( -184, -736 )
+position = Vector2( -200, -736 )
 
 [node name="TouchableZone_100x100_9" parent="." instance=ExtResource( 14 )]
-position = Vector2( 0, -920 )
+position = Vector2( 0, -896 )
 
 [node name="TouchableZone_100x100_7" parent="." instance=ExtResource( 14 )]
-position = Vector2( -584, -736 )
+position = Vector2( -600, -736 )
 
 [node name="TouchableZone_100x100_8" parent="." instance=ExtResource( 14 )]
-position = Vector2( -384, -736 )
+position = Vector2( -400, -736 )
