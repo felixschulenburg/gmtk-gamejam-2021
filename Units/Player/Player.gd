@@ -13,12 +13,13 @@ onready var ned_anchor = $Ned/Anchor
 onready var camera = $Camera2D
 onready var launch_line = $LaunchLine
 onready var invulnerability_timer = $InvulnerabilityTimer
-onready var segments_label = $CanvasLayer/SegmentsPanel/SegementsLabel
+onready var health_label = $CanvasLayer/HealthPanel/HealthLabel
 
 var joy_fixed = true
 var ned_fixed = false
 
-export var num_segments = 40
+export var health = 5
+export var num_segments = 20
 export var len_segments = 10
 export var launch_speed = 250
 
@@ -62,13 +63,14 @@ func _ready():
 		segments.push_back(s)
 
 func _process(delta):
-	segments_label.text = "Segments: " + str(segments.size())
-
-func _physics_process(delta):
-	camera.global_position = get_inactive().global_position
+	health_label.text = "Health: " + str(health)
+	
 	if dragging:
 		launch_line.points[0] = get_active().global_position
 		launch_line.points[1] = get_global_mouse_position()
+
+func _physics_process(delta):
+	camera.global_position = get_inactive().global_position
 
 func _input(event):
 	if Input.is_action_just_pressed("scroll_up"):
@@ -144,8 +146,6 @@ func remove_segment():
 	#		s.call_deferred("queue_free")
 			n.call_deferred(("queue_free"))
 #			update_segment_length(0)
-	else:
-		emit_signal("player_died")
 
 #func update_segment_length(i):
 #	# hack
@@ -180,9 +180,12 @@ func num_nodes():
 func on_player_hit(damage):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
-		for i in range(damage):
-			remove_segment();
+		health = health - damage
+		check_health()
 
-func on_player_pickup(segments):
-	for i in range(segments):
-		add_segment();
+func on_player_pickup(health_add):
+	health = health + health_add
+
+func check_health():
+	if health <= 0:
+		emit_signal("player_died")
