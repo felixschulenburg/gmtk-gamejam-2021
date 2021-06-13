@@ -166,7 +166,6 @@ rotation = 0.261799
 [node name="floor_1000x21" parent="." instance=ExtResource( 4 )]
 position = Vector2( 208, 56 )
 rotation = -0.174533
-scale = Vector2( 1, 1 )
 
 [node name="floor_1000x22" parent="." instance=ExtResource( 4 )]
 position = Vector2( -216, -560 )

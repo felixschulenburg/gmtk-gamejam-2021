@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 128, 128 )
+extents = Vector2( 40, 100 )
 
 [sub_resource type="OpenSimplexNoise" id=2]
 period = 11.2
@@ -13,11 +13,11 @@ lacunarity = 2.34
 
 [sub_resource type="NoiseTexture" id=3]
 resource_local_to_scene = true
-width = 256
-height = 256
+width = 80
+height = 200
 noise = SubResource( 2 )
 
-[node name="TouchableZone" type="Area2D"]
+[node name="TouchableZone_40x100_" type="Area2D"]
 z_index = -1
 collision_layer = 32
 collision_mask = 32

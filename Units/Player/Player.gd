@@ -28,6 +28,7 @@ var nodes = []
 var segments = []
 
 var dragging = false
+var probing = false
 
 signal probe_touchable
 signal player_died
@@ -82,6 +83,7 @@ func _input(event):
 		remove_segment()
 		
 	if Input.is_action_pressed("action_space") or event.is_action_pressed("click_right"):
+		probing = true
 		emit_signal("probe_touchable")
 	
 	if event.is_action_pressed("click_left") and not dragging:
@@ -155,17 +157,19 @@ func remove_segment():
 #	segments[i].joint.disable_collision = !segments[i].joint.disable_collision
 
 func toggle_fixed():
-	joy_fixed = not joy_fixed
-	if joy_fixed:
-		joy.mode = RigidBody2D.MODE_STATIC
-	else:
-		joy.mode = RigidBody2D.MODE_RIGID
-	
-	ned_fixed = not ned_fixed
-	if ned_fixed:
-		ned.mode = RigidBody2D.MODE_STATIC
-	else:
-		ned.mode = RigidBody2D.MODE_RIGID
+	if probing:
+		probing = false
+		joy_fixed = not joy_fixed
+		if joy_fixed:
+			joy.mode = RigidBody2D.MODE_STATIC
+		else:
+			joy.mode = RigidBody2D.MODE_RIGID
+		
+		ned_fixed = not ned_fixed
+		if ned_fixed:
+			ned.mode = RigidBody2D.MODE_STATIC
+		else:
+			ned.mode = RigidBody2D.MODE_RIGID
 
 func set_health(value):
 	health = value
