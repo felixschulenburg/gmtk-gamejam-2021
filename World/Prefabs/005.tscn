@@ -30,6 +30,9 @@ position = Vector2( -750, 760 )
 [node name="Waypoint2" parent="." instance=ExtResource( 13 )]
 position = Vector2( -240, 760 )
 
+[node name="floor_100x20_12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1068, -1052 )
+
 [node name="SpawnMaybe7" parent="." instance=ExtResource( 8 )]
 spawnProbability = 75
 
@@ -236,7 +239,7 @@ position = Vector2( 360, -750 )
 position = Vector2( 510, -430 )
 
 [node name="floor_100x20_5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 900, -1050 )
+position = Vector2( 900, -1052 )
 
 [node name="floor_100x20_11" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1810, -1650 )

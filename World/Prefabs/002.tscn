@@ -24,6 +24,26 @@ position = Vector2( 0, 1000 )
 [node name="Exit" type="Node2D" parent="."]
 position = Vector2( 0, -1000 )
 
+[node name="Spikes" parent="." instance=ExtResource( 5 )]
+position = Vector2( -116, 696 )
+rotation = -2.87979
+scale = Vector2( 1, 1 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 172, 756 )
+rotation = -2.87979
+scale = Vector2( 1, 1 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 492, 824 )
+rotation = -2.87979
+scale = Vector2( 1, 1 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 808, 880 )
+rotation = -2.87979
+scale = Vector2( 1, 1 )
+
 [node name="floor_1000x20" parent="." instance=ExtResource( 2 )]
 position = Vector2( 432, 760 )
 rotation = 0.198777
@@ -139,6 +159,14 @@ rotation = -1.5708
 [node name="SpawnMaybe" parent="." instance=ExtResource( 7 )]
 position = Vector2( 592, 224 )
 spawnProbability = 50
+
+[node name="Spikes6" parent="SpawnMaybe" instance=ExtResource( 5 )]
+position = Vector2( 56, 424 )
+rotation = 1.57079
+
+[node name="Spikes5" parent="SpawnMaybe" instance=ExtResource( 5 )]
+position = Vector2( -48, 292 )
+rotation = -1.57079
 
 [node name="wall_20x100_2" parent="SpawnMaybe" instance=ExtResource( 8 )]
 position = Vector2( 4, 360 )

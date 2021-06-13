@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/SceneGeometry/wall_20x1000.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/SceneGeometry/floor_200x20.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Units/Pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/SceneGeometry/wall_20x100.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Units/Automove.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Units/Waypoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Units/SpikeStar4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Units/SpawnMaybe.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Units/Spike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Units/SpikeRow4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/SceneGeometry/floor_100x20.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/SceneGeometry/floor_500x20.tscn" type="PackedScene" id=14]
 
 [node name="Node2D" type="StaticBody2D"]
 collision_layer = 3
@@ -17,11 +26,126 @@ position = Vector2( 0, 1000 )
 [node name="Exit" type="Node2D" parent="."]
 position = Vector2( 0, -1000 )
 
+[node name="SpawnMaybe5" parent="." instance=ExtResource( 10 )]
+position = Vector2( -952, -556 )
+rotation = 1.57079
+
+[node name="Spikes" parent="." instance=ExtResource( 11 )]
+position = Vector2( -756, -264 )
+rotation = -2.96706
+
+[node name="Spikes3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -68.0001, -420 )
+rotation = -2.96706
+
+[node name="Spikes7" parent="." instance=ExtResource( 11 )]
+position = Vector2( -568, -792 )
+
+[node name="Spikes6" parent="." instance=ExtResource( 11 )]
+position = Vector2( -940, -668 )
+rotation = -5.93412
+
+[node name="Spikes4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 164, -304 )
+rotation = -1.5708
+
+[node name="Spikes5" parent="." instance=ExtResource( 11 )]
+position = Vector2( -952, -484 )
+rotation = -4.71239
+
+[node name="Spikes2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -304, -188 )
+rotation = -2.96706
+
+[node name="floor_500x20_2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -288, -232 )
+rotation = 0.174533
+scale = Vector2( 1, 1 )
+
+[node name="floor_500x20_3" parent="." instance=ExtResource( 14 )]
+position = Vector2( -516, -548 )
+rotation = 0.174533
+scale = Vector2( 1, 1 )
+
+[node name="SpawnMaybe4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 112, 108 )
+spawnProbability = 70
+
+[node name="Spikes" parent="SpawnMaybe4" instance=ExtResource( 11 )]
+position = Vector2( -292, 112 )
+rotation = 0.872665
+
+[node name="Spikes2" parent="SpawnMaybe4" instance=ExtResource( 11 )]
+position = Vector2( 176, 100 )
+
+[node name="Spikes3" parent="SpawnMaybe4" instance=ExtResource( 11 )]
+position = Vector2( 644, 100 )
+
+[node name="floor_500x20_" parent="." instance=ExtResource( 14 )]
+position = Vector2( 288, 260 )
+
+[node name="SpawnMaybe3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4, 368 )
+spawnProbability = 65
+
+[node name="wall_20x100_" parent="SpawnMaybe3" instance=ExtResource( 6 )]
+position = Vector2( 416, 180 )
+
+[node name="floor_100x20_" parent="SpawnMaybe3" instance=ExtResource( 13 )]
+position = Vector2( 496, 272 )
+
+[node name="floor_200x20_" parent="SpawnMaybe3" instance=ExtResource( 4 )]
+position = Vector2( 412, 92 )
+
+[node name="SpawnMaybe2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 600, -304 )
+spawnProbability = 75
+
+[node name="Spikes" parent="SpawnMaybe2" instance=ExtResource( 11 )]
+position = Vector2( -340, 80 )
+rotation = 1.5708
+
+[node name="SpikeStar4_" parent="SpawnMaybe2" instance=ExtResource( 9 )]
+position = Vector2( -12, -440 )
+rotation = -1.57079
+
+[node name="Spikes2" parent="SpawnMaybe2" instance=ExtResource( 11 )]
+position = Vector2( 348, 80 )
+rotation = 4.71239
+
+[node name="Pickup" parent="SpawnMaybe2" instance=ExtResource( 5 )]
+position = Vector2( 8, 120 )
+
+[node name="SpikeRow4_" parent="SpawnMaybe2" instance=ExtResource( 12 )]
+position = Vector2( 8, -100 )
+
+[node name="SpikeRow4_2" parent="SpawnMaybe2" instance=ExtResource( 12 )]
+position = Vector2( -368, -228 )
+rotation = 1.5708
+
+[node name="SpikeRow4_3" parent="SpawnMaybe2" instance=ExtResource( 12 )]
+position = Vector2( 8, 284 )
+
 [node name="wall_20x200_2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -220, 184 )
 
 [node name="floor_200x20_" parent="." instance=ExtResource( 4 )]
 position = Vector2( -800, 640 )
+
+[node name="floor_200x20_4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -608, 440 )
+
+[node name="wall_20x100_" parent="floor_200x20_4" instance=ExtResource( 6 )]
+position = Vector2( 180, -84 )
+
+[node name="wall_20x100_2" parent="floor_200x20_4" instance=ExtResource( 6 )]
+position = Vector2( 180, -180 )
+
+[node name="wall_20x100_3" parent="floor_200x20_4" instance=ExtResource( 6 )]
+position = Vector2( -180, -80 )
+
+[node name="wall_20x100_4" parent="floor_200x20_4" instance=ExtResource( 6 )]
+position = Vector2( -180, -180 )
 
 [node name="floor_200x20_2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 608, -384 )
@@ -53,9 +177,6 @@ position = Vector2( 0, -744 )
 [node name="floor_200x20_14" parent="." instance=ExtResource( 4 )]
 position = Vector2( 392, -744 )
 
-[node name="floor_200x20_15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 792, -744 )
-
 [node name="wall_20x1000" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1000, 0 )
 
@@ -73,3 +194,34 @@ position = Vector2( 212, -184 )
 
 [node name="Pickup" parent="." instance=ExtResource( 5 )]
 position = Vector2( -603.197, 307.157 )
+
+[node name="Automove" parent="." instance=ExtResource( 7 )]
+position = Vector2( -896, 544 )
+waypoints = [ NodePath("../Waypoint"), NodePath("../Waypoint2"), NodePath("../Waypoint3"), NodePath("../Waypoint4") ]
+
+[node name="SpikeStar4_" parent="Automove" instance=ExtResource( 9 )]
+
+[node name="Waypoint4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -896, 96 )
+
+[node name="Waypoint3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -320, 96 )
+
+[node name="Waypoint2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -320, 544 )
+
+[node name="Waypoint" parent="." instance=ExtResource( 8 )]
+position = Vector2( -896, 544 )
+
+[node name="SpawnMaybe" parent="." instance=ExtResource( 10 )]
+spawnProbability = 50
+
+[node name="Automove2" parent="SpawnMaybe" instance=ExtResource( 7 )]
+position = Vector2( -896, 544 )
+waypoints = [ NodePath("../../Waypoint3"), NodePath("../../Waypoint4"), NodePath("../../Waypoint"), NodePath("../../Waypoint2") ]
+
+[node name="SpikeStar4_" parent="SpawnMaybe/Automove2" instance=ExtResource( 9 )]
+position = Vector2( 576, -448 )
+
+[node name="SpikeStar4_" parent="." instance=ExtResource( 9 )]
+position = Vector2( -96, 448 )
