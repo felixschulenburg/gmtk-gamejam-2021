@@ -1,19 +1,18 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Units/Pickup.gd" type="Script" id=1]
-[ext_resource path="res://Assets/spool.png" type="Texture" id=2]
+[ext_resource path="res://Assets/heart.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 20.0
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0
 
 [node name="Pickup" type="Node2D"]
 script = ExtResource( 1 )
+segmentsPerPickup = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -1.76976, -4.01147 )
-rotation = 1.13097
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
