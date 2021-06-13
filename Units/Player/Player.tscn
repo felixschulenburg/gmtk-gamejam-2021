@@ -70,7 +70,7 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="SegmentsPanel" type="Panel" parent="CanvasLayer"]
+[node name="HealthPanel" type="Panel" parent="CanvasLayer"]
 margin_left = 500.0
 margin_top = 500.0
 margin_right = 641.0
@@ -79,7 +79,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SegementsLabel" type="Label" parent="CanvasLayer/SegmentsPanel"]
+[node name="HealthLabel" type="Label" parent="CanvasLayer/HealthPanel"]
 margin_top = 2.37842
 margin_right = 140.0
 margin_bottom = 42.3784

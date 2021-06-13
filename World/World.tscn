@@ -12,7 +12,6 @@ bg_color = Color( 0.12549, 0.12549, 0.12549, 0.894118 )
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-num_segments = 5
 
 [node name="Arena" parent="." instance=ExtResource( 2 )]
 player_node_path = NodePath("../Player")
