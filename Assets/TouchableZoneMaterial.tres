@@ -1,0 +1,69 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=2]
+
+[sub_resource type="OpenSimplexNoise" id=2]
+period = 11.0
+persistence = 0.57
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=3]
+width = 40
+height = 40
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="VisualShaderNodeTexture" id=4]
+texture = SubResource( 3 )
+
+[sub_resource type="VisualShaderNodeVectorFunc" id=5]
+function = 6
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=10]
+function = 9
+
+[sub_resource type="VisualShader" id=6]
+code = "shader_type canvas_item;
+uniform sampler2D tex_frg_3;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:3
+	vec4 tex_frg_3_read = texture(tex_frg_3, UV.xy);
+	vec3 n_out3p0 = tex_frg_3_read.rgb;
+	float n_out3p1 = tex_frg_3_read.a;
+
+// VectorFunc:4
+	vec3 n_out4p0 = abs(n_out3p0);
+
+// ScalarFunc:5
+	float n_out5p0 = log(dot(n_out4p0, vec3(0.333333, 0.333333, 0.333333)));
+
+// Output:0
+	COLOR.a = n_out5p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -258, 66 )
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2( 960, 140 )
+nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/position = Vector2( 140, 120 )
+nodes/fragment/4/node = SubResource( 5 )
+nodes/fragment/4/position = Vector2( 400, 200 )
+nodes/fragment/5/node = SubResource( 10 )
+nodes/fragment/5/position = Vector2( 680, 216 )
+nodes/fragment/connections = PoolIntArray( 3, 0, 4, 0, 4, 0, 5, 0, 5, 0, 0, 1 )
+
+[resource]
+shader = SubResource( 6 )

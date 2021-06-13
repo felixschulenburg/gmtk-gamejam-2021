@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "TouchableZone",
 "language": "GDScript",
-"path": "res://TouchableZone.gd"
+"path": "res://World/TouchableZone.gd"
 } ]
 _global_script_class_icons={
 "ChainJoint": "",

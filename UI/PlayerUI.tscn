@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/PlayerUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Styles/FontComic.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/sprites/spider_bow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sprites/spider_beard.png" type="Texture" id=4]
+[ext_resource path="res://Assets/sprites/spider_blank.png" type="Texture" id=5]
 
 [node name="PlayerUI" type="Control"]
 anchor_right = 1.0
@@ -19,6 +22,46 @@ margin_bottom = 224.0
 custom_fonts/font = ExtResource( 2 )
 text = "Score: 0"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 96.0
+margin_bottom = 96.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 96.0
+margin_bottom = 96.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 96.0
+margin_bottom = 160.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 96.0
+margin_bottom = 160.0
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

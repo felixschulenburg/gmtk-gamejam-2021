@@ -1,16 +1,25 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/SceneGeometry/floor_1000x20.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Units/SpikeRow4.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_100x100.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sprites/bg.png" type="Texture" id=6]
+[ext_resource path="res://Assets/styles/StyleFlatNormal.tres" type="StyleBox" id=6]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_100x40.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/bg.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Units/Pickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Units/Coin.tscn" type="PackedScene" id=10]
 
-[node name="Node2D" type="StaticBody2D"]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/fonts/COMIC.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[node name="Node2D2" type="StaticBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 1 )
@@ -20,7 +29,6 @@ position = Vector2( -2.7973, -9.27921 )
 scale = Vector2( 9.82797, 5.04279 )
 z_index = -1
 z_as_relative = false
-texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 200, 200 )
 
@@ -60,7 +68,7 @@ position = Vector2( -152, 160 )
 position = Vector2( 1000, -68 )
 
 [node name="Pickup" parent="." instance=ExtResource( 9 )]
-position = Vector2( -724, -100 )
+position = Vector2( -696, -120 )
 
 [node name="TouchableZone_100x20_7" parent="." instance=ExtResource( 7 )]
 position = Vector2( -772, -472 )
@@ -112,3 +120,33 @@ position = Vector2( 1000, -312 )
 
 [node name="Coin2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, -364 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -256.0
+margin_top = 112.0
+margin_right = 256.0
+margin_bottom = 368.0
+custom_styles/panel = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 24.0
+margin_right = 480.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 2 )
+text = "Left-click and drag to slingshot
+
+Right-click to attach and switch roles
+
+Spikes are dangerous!"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2, 4 )
+scale = Vector2( 9.98, 5.16 )
