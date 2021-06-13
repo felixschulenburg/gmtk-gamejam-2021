@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Assets/styles/FontComic.tres" type="DynamicFont" id=2]
@@ -6,13 +6,18 @@
 [ext_resource path="res://Assets/styles/StyleFlatNormal.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/styles/StyleFlatPressedl.tres" type="StyleBox" id=5]
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/fonts/COMIC.TTF"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 128
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 2 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,8 +29,22 @@ margin_left = 164.0
 margin_top = 327.0
 margin_right = 932.0
 margin_bottom = 583.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreLabel" type="Label" parent="CanvasLayer"]
+visible = false
+margin_left = 164.0
+margin_top = 327.0
+margin_right = 676.0
+margin_bottom = 419.0
+custom_fonts/font = SubResource( 3 )
+text = "Score: 0"
 align = 1
 valign = 1
 __meta__ = {

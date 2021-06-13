@@ -30,6 +30,5 @@ func _on_ContinueButton_pressed():
 func _on_Restart_pressed():
 	get_tree().change_scene('res://World/World.tscn')
 
-
 func _on_AudioStreamPlayer_finished():
 	music.play()
