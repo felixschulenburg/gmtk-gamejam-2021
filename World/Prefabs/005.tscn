@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x1000.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://World/SceneGeometry/TouchableZone_100x100.tscn" type="PackedScene" id=16]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x40.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x100.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Units/Coin.tscn" type="PackedScene" id=19]
 
 [node name="Node2D" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -131,6 +132,9 @@ position = Vector2( 520, 330 )
 position = Vector2( 180, 80 )
 rotation = 1.57079
 
+[node name="Coin" parent="SpawnMaybe5" instance=ExtResource( 19 )]
+position = Vector2( 576, 172 )
+
 [node name="SpawnMaybe6" parent="." instance=ExtResource( 8 )]
 position = Vector2( -10, -10 )
 spawnProbability = 65
@@ -193,6 +197,9 @@ rotation = 3.14159
 [node name="TouchableZone_100x40_9" parent="SpawnMaybe6" instance=ExtResource( 15 )]
 position = Vector2( 778, -1514 )
 rotation = 3.14159
+
+[node name="Coin" parent="SpawnMaybe6" instance=ExtResource( 19 )]
+position = Vector2( 834, -1642 )
 
 [node name="SpawnMaybe7" parent="." instance=ExtResource( 8 )]
 spawnProbability = 75

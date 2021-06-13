@@ -196,87 +196,66 @@ rotation = -0.174533
 
 [node name="TouchableZone_100x40_" parent="." instance=ExtResource( 13 )]
 position = Vector2( -472, 264 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_2" parent="." instance=ExtResource( 13 )]
 position = Vector2( -272, 264 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_3" parent="." instance=ExtResource( 13 )]
 position = Vector2( -576, 88 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_4" parent="." instance=ExtResource( 13 )]
 position = Vector2( -368, -96 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_19" parent="." instance=ExtResource( 13 )]
 position = Vector2( -568, -96 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_20" parent="." instance=ExtResource( 13 )]
 position = Vector2( -768, -96 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_21" parent="." instance=ExtResource( 13 )]
 position = Vector2( -888, -304 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_5" parent="." instance=ExtResource( 13 )]
 position = Vector2( -16, -96 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_6" parent="." instance=ExtResource( 13 )]
 position = Vector2( 304, -96 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_7" parent="." instance=ExtResource( 13 )]
 position = Vector2( 504, -96 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_8" parent="." instance=ExtResource( 13 )]
 position = Vector2( 704, -176 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_9" parent="." instance=ExtResource( 13 )]
 position = Vector2( 704, -304 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_13" parent="." instance=ExtResource( 13 )]
 position = Vector2( 504, -304 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_14" parent="." instance=ExtResource( 13 )]
 position = Vector2( 264, -456 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_15" parent="." instance=ExtResource( 13 )]
 position = Vector2( 24, -312 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_16" parent="." instance=ExtResource( 13 )]
 position = Vector2( -176, -312 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_17" parent="." instance=ExtResource( 13 )]
 position = Vector2( -448, -384 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_18" parent="." instance=ExtResource( 13 )]
 position = Vector2( -696, -304 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_10" parent="." instance=ExtResource( 13 )]
 position = Vector2( 704, -384 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_11" parent="." instance=ExtResource( 13 )]
 position = Vector2( 704, -464 )
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_100x40_12" parent="." instance=ExtResource( 13 )]
 position = Vector2( 704, -544 )
-scale = Vector2( 1, 1 )
 
 [node name="floor_1000x28" parent="." instance=ExtResource( 4 )]
 position = Vector2( 208, 56 )

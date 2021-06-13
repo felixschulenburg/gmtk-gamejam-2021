@@ -9,6 +9,12 @@ export var coinsPerPickup = 100
 signal player_got_coin(coins)
 
 var already_picked_up = false
+var rot = 0
+
+func _process(delta):
+	rot += delta * 1.2
+	var val = sin(rot)
+	scale.x = val
 
 func _on_Area2D_body_entered(body):
 	if not already_picked_up:

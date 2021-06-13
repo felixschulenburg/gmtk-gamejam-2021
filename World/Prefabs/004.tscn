@@ -64,7 +64,6 @@ rotation = 0.174533
 [node name="floor_500x20_3" parent="." instance=ExtResource( 14 )]
 position = Vector2( -516, -548 )
 rotation = 0.174533
-scale = Vector2( 1, 1 )
 
 [node name="SpawnMaybe2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 600, -304 )
@@ -343,7 +342,6 @@ position = Vector2( -576, -196 )
 [node name="Spikes3" parent="." instance=ExtResource( 11 )]
 position = Vector2( -72, -420 )
 rotation = -2.96706
-scale = Vector2( 1, 1 )
 
 [node name="TouchableZone_40x40_7" parent="." instance=ExtResource( 17 )]
 position = Vector2( -852, -300 )
