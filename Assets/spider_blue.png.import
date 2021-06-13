@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider_blue.png-5916ec736b6885efced2110346565814.stex"
+path="res://.import/spider_blue.png-facab82f153b71880616e82a1fcf7b6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spider_blue.png"
-dest_files=[ "res://.import/spider_blue.png-5916ec736b6885efced2110346565814.stex" ]
+source_file="res://Assets/spider_blue.png"
+dest_files=[ "res://.import/spider_blue.png-facab82f153b71880616e82a1fcf7b6e.stex" ]
 
 [params]
 

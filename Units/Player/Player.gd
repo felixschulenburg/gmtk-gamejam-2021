@@ -21,13 +21,15 @@ var ned_fixed = false
 export var start_health = 5
 export var num_segments = 20
 export var len_segments = 10
-export var launch_speed = 250
+export var launch_speed = 300
 
 var joy_health = 5 setget set_joy_health, get_joy_health
 var ned_health = 5 setget set_ned_health, get_ned_health
 
 var nodes = []
 var segments = []
+
+var score = 0 setget set_score, get_score
 
 var dragging = false
 var probing = false
@@ -69,11 +71,19 @@ func _ready():
 		n1.add_child(s)
 		s.set_nodes(n1, n2)
 		segments.push_back(s)
+	
+	apply_impulse(Vector2(0.5 * launch_speed, 0))
 
 func _process(delta):
+	self.score = max(score, round(max(0, -get_active().global_position[1] / 100)) * 10)
+	
 	if dragging:
-		launch_line.points[0] = get_active().global_position
-		launch_line.points[1] = get_global_mouse_position()
+		var p1 = get_active().global_position
+		var p2 = get_global_mouse_position()
+		var dir = (p2 - p1)
+		var l = min(dir.length(), launch_speed)
+		launch_line.points[0] = p1
+		launch_line.points[1] = p1 + dir.normalized() * l
 
 func _physics_process(delta):
 	camera.global_position = get_inactive().global_position
@@ -97,14 +107,17 @@ func _input(event):
 		dragging = false
 		var drag_end = get_global_mouse_position()
 		var dir = get_active().global_position - drag_end
+		var spd = min(dir.length(), launch_speed)
 		launch_line.hide()
-		
+		apply_impulse(dir.normalized() * spd)
+
+func apply_impulse(v):
 		if not joy_fixed:
-			joy_anchor.body.apply_central_impulse(dir.normalized() * launch_speed)
+			joy_anchor.body.apply_central_impulse(v)
 		for i in range(0, nodes.size()):
-			nodes[i].body.apply_central_impulse(dir.normalized() * launch_speed)
+			nodes[i].body.apply_central_impulse(v)
 		if not ned_fixed:
-			ned_anchor.body.apply_central_impulse(dir.normalized() * launch_speed)
+			ned_anchor.body.apply_central_impulse(v)
 
 func add_segment():
 	if joy_fixed:
@@ -204,10 +217,20 @@ func on_player_ned_hit(damage):
 
 func on_player_pickup(health_add):
 	if joy_fixed:
-		self.joy_health = self.joy_health + health_add
-	elif ned_fixed:
 		self.ned_health = self.ned_health + health_add
+	elif ned_fixed:
+		self.joy_health = self.joy_health + health_add
+
+func on_player_coin_got(coins):
+	self.score = self.score + coins
 
 func check_health():
 	if self.joy_health <= 0 or self.ned_health <= 0:
 		emit_signal("player_died")
+
+func set_score(value):
+	score = value
+	player_ui.score = score
+
+func get_score():
+	return score

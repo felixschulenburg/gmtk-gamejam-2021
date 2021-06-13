@@ -16,6 +16,7 @@
 _data = [ Vector2( 0, 0.227273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Player" type="Node2D"]
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="Joy" type="RigidBody2D" parent="."]

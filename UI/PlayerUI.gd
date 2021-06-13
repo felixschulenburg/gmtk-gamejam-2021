@@ -2,10 +2,14 @@ extends Control
 
 var HealthSymbolScene = preload("res://UI/HealthSymbol.tscn")
 
+onready var score_label = $ScoreLabel
+
 var joy_health setget set_joy_health, get_joy_health
 var ned_health setget set_ned_health, get_ned_health
 var joy_health_symbols = []
 var ned_health_symbols = []
+
+var score setget set_score, get_score
 
 func set_joy_health(value):
 	joy_health = value
@@ -36,3 +40,10 @@ func get_joy_health():
 
 func get_ned_health():
 	return joy_health
+
+func set_score(value):
+	score = value
+	score_label.set_text("Score: " + str(score))
+
+func get_score():
+	return score

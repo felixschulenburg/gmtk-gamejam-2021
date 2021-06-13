@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spider_orange.png-550355b510b557f1e1c7b699978c5975.stex"
+path="res://.import/spider_orange.png-c9699a4e7f3c47512fdf0415a7372148.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spider_orange.png"
-dest_files=[ "res://.import/spider_orange.png-550355b510b557f1e1c7b699978c5975.stex" ]
+source_file="res://Assets/spider_orange.png"
+dest_files=[ "res://.import/spider_orange.png-c9699a4e7f3c47512fdf0415a7372148.stex" ]
 
 [params]
 
