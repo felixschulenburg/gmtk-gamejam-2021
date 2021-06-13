@@ -138,7 +138,7 @@ margin_bottom = 256.0
 custom_fonts/font = SubResource( 2 )
 text = "Left-click and drag to slingshot
 
-Right-click to attach and switch roles
+Right-click to attach to bright regions and switch roles
 
 Spikes are dangerous!"
 valign = 1
