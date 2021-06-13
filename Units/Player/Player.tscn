@@ -15,10 +15,12 @@ _data = [ Vector2( 0, 0.227273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 
 script = ExtResource( 3 )
 
 [node name="Joy" type="RigidBody2D" parent="."]
+collision_layer = 33
+collision_mask = 0
+contact_monitor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Joy"]
 shape = SubResource( 1 )
-disabled = true
 
 [node name="Sprite" type="Sprite" parent="Joy"]
 z_index = 1
@@ -31,10 +33,12 @@ node_b = NodePath("../Anchor")
 [node name="Anchor" parent="Joy" instance=ExtResource( 2 )]
 
 [node name="Ned" type="RigidBody2D" parent="."]
+collision_layer = 33
+collision_mask = 0
+contact_monitor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ned"]
 shape = SubResource( 2 )
-disabled = true
 
 [node name="Sprite" type="Sprite" parent="Ned"]
 z_index = 1

@@ -28,6 +28,7 @@ var segments = []
 
 var dragging = false
 
+signal probe_touchable
 signal player_died
 
 func _ready():
@@ -80,7 +81,7 @@ func _input(event):
 		remove_segment()
 		
 	if Input.is_action_pressed("action_space") or event.is_action_pressed("click_right"):
-		toggle_fixed()
+		emit_signal("probe_touchable")
 	
 	if event.is_action_pressed("click_left") and not dragging:
 		dragging = true
