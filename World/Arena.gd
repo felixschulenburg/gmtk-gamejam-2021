@@ -15,15 +15,15 @@ var wall_segments = []
 
 var start_prefab = preload("Prefabs/Start.tscn")
 var arena_prefabs = [
-	preload("Prefabs/001.tscn"),
-	preload("Prefabs/002.tscn"),
-	preload("Prefabs/003.tscn"),
-	preload("Prefabs/004.tscn"),
-	#preload("Prefabs/005.tscn")
+	#preload("Prefabs/001.tscn"),
+	#preload("Prefabs/002.tscn"),
+	#preload("Prefabs/003.tscn"),
+	#preload("Prefabs/004.tscn"),
+	preload("Prefabs/005.tscn")
 ]
 
 var last_chunk
-var last_arena_prefab_id
+var last_arena_prefab_id = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,8 +50,9 @@ func _process(delta):
 func createNewChunk(chunk_index):	
 	# Get random world prefab
 	var rnd_id = last_arena_prefab_id
-	while rnd_id == last_arena_prefab_id:
-		rnd_id = randi() % arena_prefabs.size()
+	if arena_prefabs.size() > 1:
+		while rnd_id == last_arena_prefab_id:
+			rnd_id = randi() % arena_prefabs.size()
 		
 	last_arena_prefab_id = rnd_id
 	var new_chunk = arena_prefabs[rnd_id].instance()
