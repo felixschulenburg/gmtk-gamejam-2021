@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x1000.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x40.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x100.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Units/Coin.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/sprites/bg.tscn" type="PackedScene" id=20]
 
 [node name="Node2D" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -27,7 +28,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, 1000 )
 
 [node name="Exit" type="Node2D" parent="."]
-position = Vector2( 930, -2030 )
+position = Vector2( 932, -2028 )
 
 [node name="Waypoint" parent="." instance=ExtResource( 13 )]
 position = Vector2( -750, 760 )
@@ -508,3 +509,24 @@ position = Vector2( 1040, -1008 )
 
 [node name="TouchableZone_40x100_4" parent="." instance=ExtResource( 18 )]
 position = Vector2( 812, -1288 )
+
+[node name="Sprite" parent="." instance=ExtResource( 20 )]
+position = Vector2( 546, -730 )
+scale = Vector2( 6.1, 12.98 )
+
+[node name="Sprite2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1316, -1714.5 )
+scale = Vector2( 6.1, 3.135 )
+
+[node name="Sprite3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 404, 685.25 )
+scale = Vector2( 5.99, 3.1475 )
+
+[node name="Sprite5" parent="." instance=ExtResource( 20 )]
+position = Vector2( -407.5, 804 )
+scale = Vector2( 5.955, 1.96 )
+
+[node name="Sprite4" parent="." instance=ExtResource( 20 )]
+position = Vector2( -543.272, 678.1 )
+rotation = -0.261799
+scale = Vector2( 4.26513, 1.87966 )

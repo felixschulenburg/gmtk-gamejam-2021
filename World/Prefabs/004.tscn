@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://World/Prefabs/WorldPrefab.gd" type="Script" id=1]
 [ext_resource path="res://World/SceneGeometry/wall_20x200.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x40.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/SceneGeometry/TouchableZone_40x100.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Units/Coin.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/sprites/bg.tscn" type="PackedScene" id=20]
 
 [node name="Node2D" type="StaticBody2D"]
 collision_layer = 3
@@ -412,3 +413,6 @@ position = Vector2( -708, 544 )
 
 [node name="TouchableZone_100x100_14" parent="." instance=ExtResource( 16 )]
 position = Vector2( -524, 560 )
+
+[node name="Sprite" parent="." instance=ExtResource( 20 )]
+scale = Vector2( 10, 10 )
