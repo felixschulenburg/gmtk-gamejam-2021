@@ -190,21 +190,9 @@ rotation = 3.14159
 position = Vector2( 778, -1514 )
 rotation = 3.14159
 
-[node name="TouchableZone_100x40_" parent="SpawnMaybe6/TouchableZone_100x40_8" instance=ExtResource( 15 )]
-position = Vector2( -760, 392.001 )
-
 [node name="TouchableZone_100x40_9" parent="SpawnMaybe6" instance=ExtResource( 15 )]
 position = Vector2( 778, -1514 )
 rotation = 3.14159
-
-[node name="TouchableZone_100x40_" parent="SpawnMaybe6/TouchableZone_100x40_9" instance=ExtResource( 15 )]
-position = Vector2( -560, 392.001 )
-
-[node name="TouchableZone_100x40_2" parent="SpawnMaybe6/TouchableZone_100x40_9" instance=ExtResource( 15 )]
-position = Vector2( -360, 392 )
-
-[node name="TouchableZone_100x40_3" parent="SpawnMaybe6/TouchableZone_100x40_9" instance=ExtResource( 15 )]
-position = Vector2( -160, 392 )
 
 [node name="SpawnMaybe7" parent="." instance=ExtResource( 8 )]
 spawnProbability = 75
@@ -220,6 +208,22 @@ position = Vector2( 510, 0 )
 
 [node name="SpikeStar4_3" parent="SpawnMaybe7/Automove" instance=ExtResource( 14 )]
 position = Vector2( 980, 0 )
+
+[node name="TouchableZone_100x40_13" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1528, -1916 )
+rotation = 3.14159
+
+[node name="TouchableZone_100x40_14" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1328, -1916 )
+rotation = 3.14159
+
+[node name="TouchableZone_100x40_15" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1128, -1916 )
+rotation = 3.14159
+
+[node name="TouchableZone_100x40_16" parent="." instance=ExtResource( 15 )]
+position = Vector2( 927.999, -1916 )
+rotation = 3.14159
 
 [node name="wall_20x100_" parent="." instance=ExtResource( 11 )]
 position = Vector2( 770, -1650 )
